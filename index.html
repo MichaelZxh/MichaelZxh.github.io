@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next mist use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -102,7 +102,7 @@
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Pisces',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"hide"},
     fancybox: true,
     motion: true,
@@ -479,6 +479,529 @@
             
               
                 
+                <a class="post-title-link" href="/2017/11/10/设置Docker加速器/" itemprop="url">
+                  设置Docker加速器
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-11-10T17:22:48+08:00" content="2017-11-10">
+              2017-11-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/docker/" itemprop="url" rel="index">
+                    <span itemprop="name">docker</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+<!-- 自定义，用于添加摘要图片，文章中不显示 -->
+        
+<!-- 自定义结束 -->
+        
+          
+            <p>由于大陆墙的原因，国内用户下载Dockerhub的速度会非常慢，这里推荐使用daocloud公司的Docker加速器。下面描述一下具体设置加速器的方法。</p>
+<blockquote>
+<ol>
+<li>配置加速器镜像仓库：<code>curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://93287a79.m.daocloud.io</code></li>
+<li>重启Docker：systemctrl restart docker(centeros)</li>
+<li>下载需要的镜像：docker pull image_xxx</li>
+</ol>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/11/08/Hadoop介绍/" itemprop="url">
+                  Hadoop介绍
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-11-08T14:35:17+08:00" content="2017-11-08">
+              2017-11-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/大数据/" itemprop="url" rel="index">
+                    <span itemprop="name">大数据</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+<!-- 自定义，用于添加摘要图片，文章中不显示 -->
+        
+<!-- 自定义结束 -->
+        
+          
+            <h3 id="Hadoop介绍"><a href="#Hadoop介绍" class="headerlink" title="Hadoop介绍"></a>Hadoop介绍</h3><blockquote>
+<p>参考链接：</p>
+<ul>
+<li><a href="http://www.tk4479.net/qq_20805103/article/details/78035032" target="_blank" rel="external">http://www.tk4479.net/qq_20805103/article/details/78035032</a></li>
+<li><a href="http://www.tk4479.net/qq_20805103/article/details/78035032" target="_blank" rel="external">http://www.tk4479.net/qq_20805103/article/details/78035032</a></li>
+</ul>
+</blockquote>
+<h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><blockquote>
+<ul>
+<li>由Apache基金会所开发的<strong>分布式系统基础框架</strong>。用户可以在不了解分布式底层细节的情况下开发分布式程序。充分利用集群的威力进行计算与存储。</li>
+<li>Hadoop框架的核心就是<strong>HDFS</strong>和<strong>MapReduce</strong>，HDFS为海量的数据提供了存储，MapReduce为海量数据提供了计算。</li>
+</ul>
+</blockquote>
+<h4 id="发展历史"><a href="#发展历史" class="headerlink" title="发展历史"></a>发展历史</h4><blockquote>
+<ul>
+<li>2006 - 2008，Hadoop的诞生阶段。只有国外少数几个互联网巨头在尝试，国内互联网行业在学习这项新技术。</li>
+<li>2008 - 2010，Hadoop少年阶段。在互联网行业已经开始投入实际应用，应用集中在网页存储检索，日志处理和用户行为分析等方面。</li>
+<li>2010 - 2015，Hadoop青年阶段。在互联网行业无不将Hadoop作为大数据计算的标准配置，且应用形式趋于多样化；企业计算领域开始实践基于Hadoop的大数据应用；在追求大数据处理能力的同时，也开始思考系统适配性和效率问题。</li>
+</ul>
+</blockquote>
+<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><blockquote>
+<ul>
+<li><strong>高可靠性。</strong> 因为它假设元素的计算与存储会失败，因此它维护了多个工作数据的副本，确保能够针对失败的节点进行重新分布处理。</li>
+<li><strong>高可扩展性。</strong> Hadoop是在可用的计算机集簇中分配数据并完成计算任务的。这些集簇可以很方便的扩展到上千个节点。</li>
+<li><strong>高效性。</strong>Hadoop能够在节点之间动态移动数据，并保证各个节点的动态平衡，因此处理速度很快。</li>
+<li><strong>高容错性。</strong>Hadoop能够自动保存数据的多个副本，并且能够自动将失败的任务重新分配。</li>
+<li><strong>低成本性。</strong>Hadoop是开源的，相比其他商用数据仓库，成本很低。</li>
+</ul>
+</blockquote>
+<hr>
+<h4 id="核心架构体系"><a href="#核心架构体系" class="headerlink" title="核心架构体系"></a>核心架构体系</h4><p><img src="/images/1510120768968.png" alt="Alt text"></p>
+<p>HDFS和MapReduce是Hadoop的两大核心，除此之外Hbase、Hive这两个核心工具也随着Hadoop发展变得越来越重要。同时，在Hadoop2.0后，在HDFS的基础上增加了YARN，是一个资源管理框架，在YARN上既可以放MapReduce，也可以放置其他的计算资源，主要是管理资源的，如CPU，硬盘，内存，网络等。</p>
+<h5 id="HDFS-体系架构"><a href="#HDFS-体系架构" class="headerlink" title="HDFS 体系架构"></a>HDFS 体系架构</h5><ol>
+<li><p>概念<br>Hadoop分布式文件系统(HDFS)被设计成适合运行在通用硬件上的分布式文件系统。HDFS是一个高度容错性的系统，能提供高吞吐量的数据访问，非常适合大规模数据集上的应用。<br>数据块（block）：大文件会被分割成多个block进行存储，block大小默认为64MB。每一个block会在多个datanode上存储多份副本，默认是3份。<br>NameNode：namenode负责管理文件目录、文件和block的对应关系以及block和datanode的对应关系。<br>DataNode：datanode就负责存储了，当然大部分容错机制都是在datanode上实现的。</p>
+</li>
+<li><p>工作机制<br>（1）客户把一个文件存入HDFS，其实HDFS会把这个文件切块后，分散存储在N台linux机器系统中（负责存储文件块的角色：data node）&lt;准确来说：切块的行为是由客户端决定的&gt;<br>（2）一旦文件被切块存储，那么，HDFS中就必须有一个机制，来记录用户的每一个文件的切块信息，及每一块的具体存储机器（负责记录块信息的角色是：name node）<br>（3）为了保证数据的安全性，HDFS可以将每一个文件块在集群中存放多个副本（到底存几个副本，是由当时存入该文件的客户端指定的）<br><strong>总结</strong>：一个HDFS系统，由一台运行了namenode的服务器，和N台运行了datanode的服务器组成！</p>
+</li>
+</ol>
+<h5 id="MapReduce体系架构"><a href="#MapReduce体系架构" class="headerlink" title="MapReduce体系架构"></a>MapReduce体系架构</h5><ol>
+<li>概念<br>MapReduce是Goodle公司的核心计算模型，它运行在大规模集群的并行计算过程中，并抽象为两个函数：map和reduce。一个MapReduce作业，会把输入的数据切分为若干块，先由map任务（task）一并行的方式处理它们，框架会先对map的输出进行排序，把所有具有相同的key值的value结合在一起，然后输入给reduce任务。接下来由reduce任务进行相应的并行计算。最后把计算的结果输出到HDFS存储起来。需要我们记忆的几个点，mapreduce作业执行涉及4个独立的实体：<br>（1）客户端（client）：编写mapreduce程序，配置作业，提交作业，这就是程序员完成的工作；<br>（2）JobTracker：初始化作业，分配作业，与TaskTracker通信，协调整个作业的执行；<br>（3）TaskTracker：保持与JobTracker的通信，在分配的数据片段上执行Map或Reduce任务，TaskTracker和JobTracker的不同有个很重要的方面，就是在执行任务时候TaskTracker可以有n多个，JobTracker则只会有一个（JobTracker只能有一个就和hdfs里namenode一样存在单点故障，我会在后面的mapreduce的相关问题里讲到这个问题的）<br>（4）HDFS：保存作业的数据、配置信息等等，最后的结果也是保存在hdfs上面 </li>
+</ol>
+<h5 id="Hive的体系架构"><a href="#Hive的体系架构" class="headerlink" title="Hive的体系架构"></a>Hive的体系架构</h5><ol>
+<li>概念<br>Hive是基于Hadoop的一个数据仓库工具(离线)，可以将结构化的数据文件映射为一张数据库表，并提供类SQL查询功能。</li>
+<li>为什么使用Hive<br>直接使用hadoop所面临的问题 ：人员学习成本太高、项目周期要求太短、MapReduce实现复杂查询逻辑开发难度太大<br>使用Hive：操作接口采用类SQL语法，提供快速开发的能力。、避免了去写MapReduce，减少开发人员的学习成本。功能扩展很方便。</li>
+</ol>
+<h5 id="Hbase数据管理"><a href="#Hbase数据管理" class="headerlink" title="Hbase数据管理"></a>Hbase数据管理</h5><ol>
+<li>概念<br>Hbase就是Hadoop database，可以提供数据的实时随机读写。Hbase与Mysql、Oralce、db2、SQLserver等关系型数据库不同，它是一个NoSQL数据库（非关系型数据库） 。<br>RowKey：是Byte array，是表中每条记录的“主键”，方便快速查找，Rowkey的设计非常重要。<br>Column Family：列族，拥有一个名称(string)，包含一个或者多个相关列<br>Column：属于某一个columnfamily，familyName:columnName，每条记录可动态添加<br>Version Number：类型为Long，默认值是系统时间戳，可由用户自定义<br>Value(Cell)：Byte array</li>
+<li>Hbase的表模型与关系型数据库的表模型区别：</li>
+</ol>
+<ul>
+<li>Hbase的表没有固定的字段定义 </li>
+<li>Hbase的表中每行存储的都是一些key-value对</li>
+<li>Hbase的表中有列族的划分，用户可以指定将哪些kv插入哪个列族 </li>
+<li>Hbase的表在物理存储上，是按照列族来分割的，不同列族的数据一定存储在不同的文件中</li>
+<li>Hbase的表中的每一行都固定有一个行键，而且每一行的行键在表中不能重复 </li>
+<li>Hbase中的数据，包含行键，包含key，包含value，都是byte[ ]类型，hbase不负责为用户维护数据类型 </li>
+<li>HBASE对事务的支持很差</li>
+</ul>
+<ol>
+<li>使用场景</li>
+</ol>
+<ul>
+<li>大数据量存储，大数据量高并发操作 </li>
+<li>需要对数据随机读写操作 </li>
+<li>读写访问均是非常简单的操作</li>
+</ul>
+<h5 id="Yarn体系架构"><a href="#Yarn体系架构" class="headerlink" title="Yarn体系架构"></a>Yarn体系架构</h5><ol>
+<li>概念<br>Yarn是一个分布式程序的运行调度平台，是hadoop2.X版本后新加入的模块。<br>yarn中有两大核心角色：<br>（1）Resource Manager<br>接受用户提交的分布式计算程序，并为其划分资源。<br>管理、监控各个Node Manager上的资源情况，以便于均衡负载。<br>（2）Node Manager<br>管理它所在机器的运算资源（cpu + 内存）。<br>负责接受Resource Manager分配的任务，创建容器、回收资源。</li>
+<li>工作机制<br><img src="/images/1510121555037.png" alt="Alt text"></li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/11/08/什么是大数据？/" itemprop="url">
+                  什么是大数据？
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-11-08T14:31:21+08:00" content="2017-11-08">
+              2017-11-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/大数据/" itemprop="url" rel="index">
+                    <span itemprop="name">大数据</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+<!-- 自定义，用于添加摘要图片，文章中不显示 -->
+        
+<!-- 自定义结束 -->
+        
+          
+            <h3 id="什么是大数据？"><a href="#什么是大数据？" class="headerlink" title="什么是大数据？"></a>什么是大数据？</h3><blockquote>
+<p>参考链接</p>
+<ol>
+<li><a href="http://www.infoq.com/cn/articles/review-and-prospec-of-big-data-technology" target="_blank" rel="external">http://www.infoq.com/cn/articles/review-and-prospec-of-big-data-technology</a></li>
+<li><a href="http://www.infoq.com/cn/articles/hadoop-storm-samza-spark-flink" target="_blank" rel="external">http://www.infoq.com/cn/articles/hadoop-storm-samza-spark-flink</a></li>
+</ol>
+</blockquote>
+<hr>
+<blockquote>
+<p>麦肯锡公司的报告《大数据：创新、竞争和生产力的下一个前沿领域》中给出的大数据定义: 大数据指的是规模超过现有数据库工具获取、存储、管理和分析能力的数据集，并同时强调并不是超过某个特定数量级的数据集才是大数据。</p>
+<p>国际数据公司（IDC）用四个维度的特征来定义大数据，即数据集的规模（Volume）、数据流动的速度（Velocity）、数据类型的多少（Variety）和数据价值的大小（Value）。</p>
+<p>亚马逊的大数据科学家John Rauser的定义比较直接：“超过单台计算机处理能力的数据量则为大数据”.</p>
+<p>维基百科上的大数据定义：“Big data is the term for a collection of data sets so large and complex that it becomes difficult to process using on-hand database management tools or traditional data processing applications. ”翻译成中文的意思是：大数据指的是数据规模庞大和复杂到难以通过现有的数据库管理工具或者传统的数据处理应用程序进行处理的数据集合。</p>
+</blockquote>
+<h4 id="大数据技术起源"><a href="#大数据技术起源" class="headerlink" title="大数据技术起源"></a>大数据技术起源</h4><p>Google提出了一整套基于分布式并行集群方式的基础架构技术，利用软件的能力来处理集群中经常发生的节点失效问题。Google使用的大数据平台主要包括五个相互独立又紧密结合在一起的系统：<strong>分布式资源管理系统Borg</strong>，<strong>Google文件系统（GFS）</strong>，针对Google应用程序的特点提出的<strong>MapReduce</strong> 编程模式，<strong>分布式的锁机制Chubby</strong>以及大规模分布式数据库<strong>BigTable</strong>。</p>
+<ol>
+<li><strong>Borg</strong>是这五个系统中最为神秘的一个，直到2015年Google才在EuroSys 2015上发表了题为“Large-scale cluster management at Google with Borg”的论文。称Google内部不仅像计算型的应用，比如MapReduce、Pregel等运行在Borg上，存储类的应用，比如GFS，BigTable和Megastore等也运行在上面，真正做到了<strong>批处理作业和长周期服务的混合部署和资源动态调度</strong>。得益于此项技术，可以使平均资源利用率达到30%~75%以上，大大高于业界平均水平的6%~12%。</li>
+<li><strong>GFS</strong>是一个大型的分布式文件系统，它为Google云计算提供海量存储，并且与Chubby、MapReduce和BigTable等技术结合得十分紧密，处于系统的底层。它的设计受到Google特殊的应用负载和技术环境的影响。相对于传统的分布式文件系统，为了达到成本、可靠性和性能的最佳平衡，GFS从多个方面进行了简化。</li>
+<li><strong>MapReduce</strong>是处理海量数据的并行编程模式，用于大规模数据集的并行运算。MapReduce通过“Map（映射）”和“Reduce（化简）”这样两个简单的概念来参加运算。用户只需要提供自己的Map 函数以及Reduce 函数就可以在集群上进行大规模的分布式数据处理。这一编程环境能够使程序设计人员编写大规模的并行应用程序时不用考虑集群的可靠性、可扩展性等问题。应用程序编写人员只需要将精力放在应用程序本身，关于集群的处理问题则交由平台来完成。与传统的分布式程序设计相比，MapReduce封装了并行处理、容错处理、本地化计算、负载均衡等细节，具有简单而强大的接口。正是由于MapReduce具有函数式编程语言和矢量编程语言的共性，使得这种编程模式特别适合于非结构化和结构化的海量数据的搜索、挖掘、分析等应用。</li>
+<li><strong>Chubby</strong>是提供粗粒度锁服务的一个文件系统，它基于松耦合分布式文件系统，解决了分布式系统的一致性问题。这种锁只是一个建议性的锁而不是强制性的锁。通过使用Chubby的锁服务，用户可以确保数据操作过程中的一致性。GFS使用Chubby来选取一个GFS主服务器，BigTable使用Chubby指定一个主服务器并发现、控制与其相关的子表服务器。</li>
+<li><strong>BigTable</strong>是基于GFS和Chubby开发的分布式存储系统。很多应用程序对于数据的组织是非常有规则的。一般来说，数据库对于处理格式化的数据还是非常方便的。但是由于关系数据库要求很强的一致性，很难将其扩展到很大的规模。为了处理Google内部大量的格式化以及半格式化数据，Google构建了弱一致性要求的大规模数据库系统BigTable。BigTablede在很多方面和数据库类似，但它并不是真正意义上的数据库。Google包括Web索引、卫星图像数据等在内的很多海量结构化和半结构化数据都是存储在BigTable中的。</li>
+</ol>
+<h4 id="常用大数据框架"><a href="#常用大数据框架" class="headerlink" title="常用大数据框架"></a>常用大数据框架</h4><blockquote>
+<p>主要包括以下类型：</p>
+<ul>
+<li>仅批处理框架<br>Apache Hadoop</li>
+<li>仅流处理框架<br>Apache Storm<br>Apache Samza</li>
+<li>混合框架<br>Apache Spark<br>Apache Flink</li>
+</ul>
+</blockquote>
+<h5 id="批处理系统"><a href="#批处理系统" class="headerlink" title="批处理系统"></a>批处理系统</h5><p>批处理主要操作大容量静态数据集，并在计算过程完成后返回结果。批处理模式中使用的数据集通常符合下列特征：</p>
+<ul>
+<li>有界：批处理数据集代表数据的有限集合；</li>
+<li>持久：数据通常始终存储在某种类型的持久存储位置中；</li>
+<li>大量：批处理操作通常是处理即为海量数据集的唯一方法。</li>
+</ul>
+<p>批处理非常适合需要访问全套记录才能完成的计算工作。例如在计算总数和平均数时，必须将数据集作为一个整体加以处理而不能将其视作多条记录的集合。这些操作要求在计算进行过程中数据维持自己的状态。<br>需要处理大量数据的任务通常最适合用批处理操作进行处理。无论直接从持久存储设备处理数据集，或首先将数据集载入内存，批处理系统在设计过程中就充分考虑了数据的量，可提供充足的处理资源。由于批处理在应对大量持久数据方面的表现极为出色，因此<strong>经常被用于对历史数据进行分析</strong>。<br>大量数据的处理需要付出大量时间，因此<strong>批处理不适合对处理时间要求较高的场合</strong>。</p>
+<p>Apache Hadoop是一种专用于批处理的处理框架。Hadoop是首个在开源社区获得极大关注的大数据框架。基于谷歌有关海量数据处理所发表的多篇论文与经验的Hadoop重新实现了相关算法和组件堆栈，让大规模批处理技术变得更易用。</p>
+<p>新版Hadoop包含多个组件，即多个层，通过配合使用可处理批数据：</p>
+<ul>
+<li>HDFS：HDFS是一种分布式文件系统层，可对集群节点间的存储和复制进行协调。HDFS确保了无法避免的节点故障发生后数据依然可用，可将其用作数据来源，可用于存储中间态的处理结果，并可存储计算的最终结果。</li>
+<li>YARN：YARN是Yet Another Resource Negotiator（另一个资源管理器）的缩写，可充当Hadoop堆栈的集群协调组件。该组件负责协调并管理底层资源和调度作业的运行。通过充当集群资源的接口，YARN使得用户能在Hadoop集群中使用比以往的迭代方式运行更多类型的工作负载。</li>
+<li>MapReduce：MapReduce是Hadoop的原生批处理引擎。</li>
+</ul>
+<p>Hadoop的处理功能来自MapReduce引擎。MapReduce的处理技术符合使用键值对的map、shuffle、reduce算法要求。基本处理过程包括：</p>
+<ul>
+<li>从HDFS文件系统读取数据集</li>
+<li>将数据集拆分成小块并分配给所有可用节点</li>
+<li>针对每个节点上的数据子集进行计算（计算的中间态结果会重新写入HDFS）</li>
+<li>重新分配中间态结果并按照键进行分组</li>
+<li>通过对每个节点计算的结果进行汇总和组合对每个键的值进行“Reducing”</li>
+<li>将计算而来的最终结果重新写入 HDFS</li>
+</ul>
+<blockquote>
+<p><strong>优势与局限</strong>：<br>由于这种方法严重依赖持久存储，每个任务需要多次执行读取和写入操作，因此速度相对较慢。但另一方面由于磁盘空间通常是服务器上最丰富的资源，这意味着MapReduce可以处理非常海量的数据集。同时也意味着相比其他类似技术，Hadoop的MapReduce通常可以在廉价硬件上运行，因为该技术并不需要将一切都存储在内存中。MapReduce具备极高的缩放潜力，生产环境中曾经出现过包含数万个节点的应用。</p>
+</blockquote>
+<h4 id="流处理系统"><a href="#流处理系统" class="headerlink" title="流处理系统"></a>流处理系统</h4><p>流处理系统会对随时进入系统的数据进行计算。相比批处理模式，这是一种截然不同的处理方式。流处理方式无需针对整个数据集执行操作，而是对通过系统传输的每个数据项执行操作。<br>流处理中的数据集是“无边界”的，这就产生了几个重要的影响：</p>
+<ul>
+<li>完整数据集只能代表截至目前已经进入到系统中的数据总量。</li>
+<li>工作数据集也许更相关，在特定时间只能代表某个单一数据项。</li>
+<li>处理工作是基于事件的，除非明确停止否则没有“尽头”。处理结果立刻可用，并会随着新数据的抵达继续更新。</li>
+</ul>
+<p>流处理系统可以处理几乎无限量的数据，但同一时间只能处理一条（真正的流处理）或很少量（微批处理，Micro-batch Processing）数据，不同记录间只维持最少量的状态。虽然大部分系统提供了用于维持某些状态的方法，但流处理主要针对副作用更少，更加功能性的处理（Functional processing）进行优化。<br><strong>此类处理非常适合某些类型的工作负载。有近实时处理需求的任务很适合使用流处理模式。分析、服务器或应用程序错误日志，以及其他基于时间的衡量指标是最适合的类型，因为对这些领域的数据变化做出响应对于业务职能来说是极为关键的。流处理很适合用来处理必须对变动或峰值做出响应，并且关注一段时间内变化趋势的数据。</strong></p>
+<hr>
+<p>Apache Storm是一种侧重于极低延迟的流处理框架，也许是要求近实时处理的工作负载的最佳选择。该技术可处理非常大量的数据，通过比其他解决方案更低的延迟提供结果。<br>Storm的流处理可对框架中名为Topology（拓扑）的DAG（Directed Acyclic Graph，有向无环图）进行编排。这些拓扑描述了当数据片段进入系统后，需要对每个传入的片段执行的不同转换或步骤。<br>拓扑包含：</p>
+<ul>
+<li>Stream：普通的数据流，这是一种会持续抵达系统的无边界数据。</li>
+<li>Spout：位于拓扑边缘的数据流来源，例如可以是API或查询等，从这里可以产生待处理的数据。</li>
+<li>Bolt：Bolt代表需要消耗流数据，对其应用操作，并将结果以流的形式进行输出的处理步骤。Bolt需要与每个Spout建立连接，随后相互连接以组成所有必要的处理。在拓扑的尾部，可以使用最终的Bolt输出作为相互连接的其他系统的输入。</li>
+</ul>
+<blockquote>
+<p><strong>优势和局限</strong>：<br>对于延迟需求很高的纯粹的流处理工作负载，Storm可能是最适合的技术。该技术可以保证每条消息都被处理，可配合多种编程语言使用。由于Storm无法进行批处理，如果需要这些能力可能还需要使用其他软件。如果对严格的一次处理保证有比较高的要求，此时可考虑使用Trident。不过这种情况下其他流处理框架也许更适合。</p>
+</blockquote>
+<hr>
+<p>Apache Samza是一种与Apache Kafka消息系统紧密绑定的流处理框架。虽然Kafka可用于很多流处理系统，但按照设计，Samza可以更好地发挥Kafka独特的架构优势和保障。该技术可通过Kafka提供容错、缓冲，以及状态存储。<br>Samza可使用YARN作为资源管理器。这意味着默认情况下需要具备Hadoop集群（至少具备HDFS和YARN），但同时也意味着Samza可以直接使用YARN丰富的内建功能。<br>Samza依赖Kafka的语义定义流的处理方式。Kafka在处理数据时涉及下列概念：</p>
+<pre><code>Topic（话题）：进入Kafka系统的每个数据流可称之为一个话题。话题基本上是一种可供消耗方订阅的，由相关信息组成的数据流。
+Partition（分区）：为了将一个话题分散至多个节点，Kafka会将传入的消息划分为多个分区。分区的划分将基于键（Key）进行，这样可以保证包含同一个键的每条消息可以划分至同一个分区。分区的顺序可获得保证。
+Broker（代理）：组成Kafka集群的每个节点也叫做代理。
+Producer（生成方）：任何向Kafka话题写入数据的组件可以叫做生成方。生成方可提供将话题划分为分区所需的键。
+Consumer（消耗方）：任何从Kafka读取话题的组件可叫做消耗方。消耗方需要负责维持有关自己分支的信息，这样即可在失败后知道哪些记录已经被处理过了。
+</code></pre><p>由于Kafka相当于永恒不变的日志，Samza也需要处理永恒不变的数据流。这意味着任何转换创建的新数据流都可被其他组件所使用，而不会对最初的数据流产生影响。</p>
+<blockquote>
+<p><strong>优势和局限</strong>：<br>对于已经具备或易于实现Hadoop和Kafka的环境，Apache Samza是流处理工作负载一个很好的选择。Samza本身很适合有多个团队需要使用（但相互之间并不一定紧密协调）不同处理阶段的多个数据流的组织。Samza可大幅简化很多流处理工作，可实现低延迟的性能。如果部署需求与当前系统不兼容，也许并不适合使用，但如果需要极低延迟的处理，或对严格的一次处理语义有较高需求，此时依然适合考虑。</p>
+</blockquote>
+<hr>
+<h4 id="混合处理系统：批处理和流处理"><a href="#混合处理系统：批处理和流处理" class="headerlink" title="混合处理系统：批处理和流处理"></a>混合处理系统：批处理和流处理</h4><p>一些处理框架可同时处理批处理和流处理工作负载。这些框架可以用相同或相关的组件和API处理两种类型的数据，借此让不同的处理需求得以简化。实现这样的功能重点在于两种不同处理模式如何进行统一，以及要对固定和不固定数据集之间的关系进行何种假设。</p>
+<hr>
+<p><strong>Apache Spark</strong>是一种包含流处理能力的下一代批处理框架。与Hadoop的MapReduce引擎基于各种相同原则开发而来的Spark主要侧重于通过完善的内存计算和处理优化机制加快批处理工作负载的运行速度。</p>
+<p>Spark可作为独立集群部署（需要相应存储层的配合），或可与Hadoop集成并取代MapReduce引擎。</p>
+<h5 id="批处理模式"><a href="#批处理模式" class="headerlink" title="批处理模式"></a>批处理模式</h5><p>与MapReduce不同，Spark的数据处理工作全部在内存中进行，只在一开始将数据读入内存，以及将最终结果持久存储时需要与存储层交互。所有中间态的处理结果均存储在内存中。</p>
+<p>虽然内存中处理方式可大幅改善性能，Spark在处理与磁盘有关的任务时速度也有很大提升，因为通过提前对整个任务集进行分析可以实现更完善的整体式优化。为此Spark可创建代表所需执行的全部操作，需要操作的数据，以及操作和数据之间关系的Directed Acyclic Graph（有向无环图），即DAG，借此处理器可以对任务进行更智能的协调。</p>
+<p>为了实现内存中批计算，Spark会使用一种名为Resilient Distributed Dataset（弹性分布式数据集），即RDD的模型来处理数据。这是一种代表数据集，只位于内存中，永恒不变的结构。针对RDD执行的操作可生成新的RDD。每个RDD可通过世系（Lineage）回溯至父级RDD，并最终回溯至磁盘上的数据。Spark可通过RDD在无需将每个操作的结果写回磁盘的前提下实现容错。</p>
+<h5 id="流处理模式"><a href="#流处理模式" class="headerlink" title="流处理模式"></a>流处理模式</h5><p>流处理能力是由Spark Streaming实现的。Spark本身在设计上主要面向批处理工作负载，为了弥补引擎设计和流处理工作负载特征方面的差异，Spark实现了一种叫做微批（Micro-batch）*的概念。在具体策略方面该技术可以将数据流视作一系列非常小的“批”，借此即可通过批处理引擎的原生语义进行处理。</p>
+<p>Spark Streaming会以亚秒级增量对流进行缓冲，随后这些缓冲会作为小规模的固定数据集进行批处理。这种方式的实际效果非常好，但相比真正的流处理框架在性能方面依然存在不足。</p>
+<blockquote>
+<p><strong>优势与局限</strong>：<br>使用Spark而非Hadoop MapReduce的主要原因是速度。在内存计算策略和先进的DAG调度等机制的帮助下，Spark可以用更快速度处理相同的数据集。<br>相比MapReduce，Spark任务更是“众所周知”地易于编写，因此可大幅提高生产力。<br>由于内存通常比磁盘空间更贵，因此相比基于磁盘的系统，Spark成本更高。然而处理速度的提升意味着可以更快速完成任务，在需要按照小时数为资源付费的环境中，这一特性通常可以抵消增加的成本。</p>
+</blockquote>
+<hr>
+<p><strong>Apache Flink</strong>是一种可以处理批处理任务的流处理框架。该技术可将批处理数据视作具备有限边界的数据流，借此将批处理任务作为流处理的子集加以处理。为所有处理任务采取流处理为先的方法会产生一系列有趣的副作用。<br>这种流处理为先的方法也叫做Kappa架构，与之相对的是更加被广为人知的Lambda架构（该架构中使用批处理作为主要处理方法，使用流作为补充并提供早期未经提炼的结果）。Kappa架构中会对一切进行流处理，借此对模型进行简化，而这一切是在最近流处理引擎逐渐成熟后才可行的。</p>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/11/07/HTTPS详解/" itemprop="url">
                   HTTPS详解
                 </a>
@@ -626,7 +1149,7 @@
 </li>
 </ol>
 <h3 id="应用数据传输"><a href="#应用数据传输" class="headerlink" title="应用数据传输"></a>应用数据传输</h3><p>在所有的握手阶段都完成之后，就可以开始传送应用数据了。应用数据在传输之前，首先要附加上MAC secret，然后再对这个数据包使用write encryption key进行加密。在服务端收到密文之后，使用Client write encryption key进行解密，客户端收到服务端的数据之后使用Server write encryption key进行解密，然后使用各自的write MAC key对数据的完整性包括是否被串改进行验证。</p>
-<p>####密钥的形象比喻<br>这里我们用个形象的比喻，我们假设A与B通信，A是SSL客户端，B是SSL服务器端，加密后的消息放在方括号[]里，以突出明文消息的区别。双方的处理动作的说明用圆括号（）括起。</p>
+<h3 id="密钥的形象比喻"><a href="#密钥的形象比喻" class="headerlink" title="密钥的形象比喻"></a>密钥的形象比喻</h3><p>这里我们用个形象的比喻，我们假设A与B通信，A是SSL客户端，B是SSL服务器端，加密后的消息放在方括号[]里，以突出明文消息的区别。双方的处理动作的说明用圆括号（）括起。</p>
 <p>A：我想和你安全的通话，我这里的对称加密算法有DES,RC5,密钥交换算法有RSA和DH，摘要算法有MD5和SHA。</p>
 <p>B：我们用DES－RSA－SHA这对组合好了。<br>这是我的证书，里面有我的名字和公钥，你拿去验证一下我的身份（把证书发给A）。<br>目前没有别的可说的了。</p>
 <p>A：（查看证书上B的名字是否无误，并通过手头早已有的CA的证书验证了B的证书的真实性，如果其中一项有误，发出警告并断开连接，这一步保证了B的公钥的真实性）<br>（产生一份秘密消息，这份秘密消息处理后将用作加密密钥，加密初始化向量（IV）和hmac的密钥。将这份秘密消息-协议中称为per_master_secret-用B的公钥加密，封装成称作ClientKeyExchange的消息。由于用了B的公钥，保证了第三方无法窃听）<br>我生成了一份秘密消息，并用你的公钥加密了，给你（把ClientKeyExchange发给B）<br>注意，下面我就要用加密的办法给你发消息了！<br>（将秘密消息进行处理，生成加密密钥，加密初始化向量和hmac的密钥）<br>[我说完了]</p>
@@ -1119,7 +1642,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1127,7 +1650,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1136,7 +1659,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1231,7 +1754,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
-    NexT.Pisces
+    NexT.Mist
   </a>
 </div>
 
@@ -1298,13 +1821,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
-
-
 
   
 
