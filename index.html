@@ -479,6 +479,188 @@
             
               
                 
+                <a class="post-title-link" href="/2017/11/16/基于GitLab搭建Django项目的CI运行环境/" itemprop="url">
+                  基于GitLab搭建Django项目的CI运行环境
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-11-16T17:22:42+08:00" content="2017-11-16">
+              2017-11-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/软件工程/" itemprop="url" rel="index">
+                    <span itemprop="name">软件工程</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+<!-- 自定义，用于添加摘要图片，文章中不显示 -->
+        
+<!-- 自定义结束 -->
+        
+          
+            <blockquote>
+<p>GitLab提供了可持续集成服务，使用GitLab提供的CI服务只需要两步即可完成：</p>
+<ol>
+<li>在仓库根目录下创建一个 <em>.gitlab-ci.yml</em>文件，</li>
+<li>为该项目指派一个Runner，当有合适请求或者push的时候就会触发build。</li>
+</ol>
+<p>因此，本文将对整个搭建过程逐步分解并以实例进行说明。<br><img src="/images/1510293390846.png" alt="Alt text"></p>
+</blockquote>
+<h4 id="一、创建一个-gitlab-ci-yml文件"><a href="#一、创建一个-gitlab-ci-yml文件" class="headerlink" title="一、创建一个.gitlab-ci.yml文件"></a>一、创建一个<em>.gitlab-ci.yml</em>文件</h4><blockquote>
+<p><code>.gtilab-ci.yml</code>是位于git工程代码库的根目录下的一个YAML格式的配置文件，用于配置该工程的CI。每一次的push到软件仓库的操作，GitLab都会查看<code>.gitlab-ci.yml</code>文件，并根据该文件的内容，在Runners上启动对应的jobs。</p>
+</blockquote>
+<ol>
+<li><p>创建<code>.gitlab-ci.yml</code>文件<br><code>.gitlab-ci.yml</code>文件使用的YAML语法，需要注意缩进格式，不要使用tabs来代替空格进行缩进。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">before_script:</div><div class="line">    - </div><div class="line">unit_test:</div><div class="line">    script:</div><div class="line">        - cd /data/www/tanjia_real/project</div><div class="line">        - python manage.py makemigration</div><div class="line">        - python manage.py migrate</div><div class="line">        - python manage.py test ../tests/</div></pre></td></tr></table></figure>
+</li>
+<li><p>提交<code>.gitlab-ci.yml</code>文件</p>
+<blockquote>
+<p>git add .gitlab-ci.yml<br>git commit -m “Add .gitlab-ci.yml”<br>git push origin master</p>
+</blockquote>
+</li>
+<li><p>查看Pipelines<br>点击gitlab项目中的Pipelines将会看到我们添加的ci任务。<br><img src="/images/1510295253361.png" alt="Alt text"></p>
+</li>
+</ol>
+<h4 id="二、安装并配置Runner"><a href="#二、安装并配置Runner" class="headerlink" title="二、安装并配置Runner"></a>二、安装并配置Runner</h4><p>在GitLab中，Runners是用来执行你在<code>.gitlab-ci.yml</code>文件中定义的CI任务的。一个Runner可以是一个虚拟机，一个VPS，一个物理机或者一个docker容器。GitLab和Runners之间通过API接口进行通讯。所以唯一的要求是Runners能够与GitLab之间联网互通。<br>Runner分为两类：</p>
+<blockquote>
+<ul>
+<li>Shared Runner：能够执行所有的CI任务；</li>
+<li>Specific Runner：执行特定的某个任务；</li>
+</ul>
+</blockquote>
+<p>想要使用Runner也只需要两部：</p>
+<blockquote>
+<ul>
+<li>安装Runner</li>
+<li>配置Runner</li>
+</ul>
+</blockquote>
+<h5 id="安装Runner"><a href="#安装Runner" class="headerlink" title="安装Runner"></a>安装Runner</h5><p>正如上文中提到的，Runner可以有多种不同的运行方式，因此，对应的也有多种不同的安装方式，这里选择Docker安装的方式。</p>
+<ol>
+<li><p><strong>下载官方的gitlab-runner镜像</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git pull gitlab-runner</div></pre></td></tr></table></figure>
+<p>这里由于国内不可描述的原因，下载会比较慢，可以考虑配置一下<a href="https://www.daocloud.io/mirror#accelerator-doc" target="_blank" rel="external">DaoCloud的加速器</a></p>
+</li>
+<li><p><strong>启动gitlab镜像</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">docker run -dit --name gitlab_runner --restart always  \</div><div class="line">-v /data/www:/data/www/ \</div><div class="line">-v /var/run/docker.sock:/var/run/docker.sock gitlab-runner</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>注册runner</strong><br>首先进入容器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker exec -it d48 /bin/bash</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p> 在容器中执行如下命令：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gitlab-runner register</div></pre></td></tr></table></figure></p>
+<p> 然后按照如下提示，依次输入配置信息：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">1. Please enter the gitlab-ci coordinator URL (e.g. https://gitlab.com )</div><div class="line">    https://192.168.2.231/(注：这里填公司内部搭建的私有gitlab仓库地址)</div><div class="line">2. Please enter the gitlab-ci token for this runner</div><div class="line">    xxx(注：这里的token可以在项目的settings-&gt; Pipelines界面中找到)</div><div class="line">3. Please enter the gitlab-ci description for this runner：</div><div class="line">       my_project_runner_01</div><div class="line">4. Please enter the gitlab-ci tags for this runner (comma separated): </div><div class="line">       my_project_ci,gitlab_runner</div><div class="line">5. Whether to run untagged jobs [true/false]:</div><div class="line">       true</div><div class="line">6. Whether to lock Runner to current project [true/false]:</div><div class="line">       true</div><div class="line">7. Please enter the executor: ssh, docker+machine, docker-ssh+machine, kubernetes, docker, parallels, virtualbox, docker-ssh, shell:</div><div class="line">       docker(注：这里选择docker作为runner的执行器，gitlab-runner收到CI任务时，会启动一个docker容器，并在该容器中运行)</div><div class="line">8. Please enter the Docker image (eg. ruby:2.1):</div><div class="line">       my_project_image(注：由于CI任务需要的运行时环境被打包到了工程相关的镜像，因此这里指定工程镜像作为CI任务的执行镜像)</div></pre></td></tr></table></figure></p>
+<p> 按照如上步骤配置完成之后，在gitlab项目的settings -&gt; Pipelines页面应该可以看到我们注册的runner了。</p>
+<ol>
+<li><p><strong>配置gitlab仓库</strong><br>我们项目的gitlab是在公司内网上搭建的，公共DNS无法解析我们gitlab地址，也就意味着在启动执行CI任务的docker容器中无法解析gitlab仓库地址并将代码拉到docker容器中执行。解决方法有两个：</p>
+<ul>
+<li><strong>基于dnsmasq 搭建DNS服务器来解析gitlab仓库</strong>。笔者尝试过该方法，DNS服务器在宿主机搭建并测试成功，但是容器内仍然无法使用该DNS服务器解析，由于项目进度关系，没有继续深究原因。有兴趣的同学可以尝试一下。<a href="https://www.chenyudong.com/archives/docker-custom-hosts-network-via-dns.html" target="_blank" rel="external">方案说明</a></li>
+<li><strong>修改config.toml，启动时在/etc/hosts文件中添加gitlab仓库与IP地址的映射关系。</strong>该方案实验后可行，本小节按照该方案进行描述。</li>
+</ul>
+<p>这里是官方对config.toml文件的<a href="https://docs.gitlab.com.cn/runner/configuration/advanced-configuration.html" target="_blank" rel="external">配置介绍</a>，该文件位于gitlab-runner容器的/etc/gitlab-runner/config.toml，主要用来定义一个runner实体的。其中runner可以有很多的实现实体，这里我们只关注docker如何配置。其中官方给出的一个配置示例如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">[runners.docker]</div><div class="line"> host = &quot;&quot;</div><div class="line"> hostname = &quot;&quot;</div><div class="line"> tls_cert_path = &quot;/Users/ayufan/.boot2docker/certs&quot;</div><div class="line"> image = &quot;ruby:2.1&quot;</div><div class="line"> cpuset_cpus = &quot;0,1&quot;</div><div class="line"> dns = [&quot;8.8.8.8&quot;]</div><div class="line"> dns_search = [&quot;&quot;]</div><div class="line"> privileged = false</div><div class="line"> userns_mode = &quot;host&quot;</div><div class="line"> cap_add = [&quot;NET_ADMIN&quot;]</div><div class="line"> cap_drop = [&quot;DAC_OVERRIDE&quot;]</div><div class="line"> devices = [&quot;/dev/net/tun&quot;]</div><div class="line"> disable_cache = false</div><div class="line"> wait_for_services_timeout = 30</div><div class="line"> cache_dir = &quot;&quot;</div><div class="line"> volumes = [&quot;/data&quot;, &quot;/home/project/cache&quot;]</div><div class="line"> extra_hosts = [&quot;other-host:127.0.0.1&quot;]</div><div class="line"> shm_size = 300000</div><div class="line"> volumes_from = [&quot;storage_container:ro&quot;]</div><div class="line"> links = [&quot;mysql_container:mysql&quot;]</div><div class="line"> services = [&quot;mysql&quot;, &quot;redis:2.8&quot;, &quot;postgres:9&quot;]</div><div class="line"> allowed_images = [&quot;ruby:*&quot;, &quot;python:*&quot;, &quot;php:*&quot;]</div><div class="line"> allowed_services = [&quot;postgres:9.4&quot;, &quot;postgres:latest&quot;]</div></pre></td></tr></table></figure>
+<p>这里如果想要将gitlab仓库地址映射到具体的内网IP只需要配置<strong>extra_hosts</strong>参数即可，下面给出我在gitlab-runner中的[runners.docker]配置信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">[[runners]]</div><div class="line">	  name = &quot;real_runner_v1&quot;</div><div class="line">	  url = &quot;http://192.168.2.231/&quot;</div><div class="line">	  token = &quot;87d22accf48a1a7d7035014b278e1d&quot;</div><div class="line">	  executor = &quot;docker&quot;</div><div class="line">	  environment = [&quot;TZ=Asia/Shanghai&quot;,&quot;DB_HOST=192.168.4.23&quot;]</div><div class="line">	  [runners.docker]</div><div class="line">	    tls_verify = false</div><div class="line">	    image = &quot;tanjia.io:10080/real/real_ci&quot;</div><div class="line">	    privileged = false</div><div class="line">	    disable_cache = false</div><div class="line">	    volumes = [&quot;/cache&quot;]</div><div class="line">	    shm_size = 0</div><div class="line">	    extra_hosts = [&quot;gitlab.tanjiavr.com:192.168.2.231&quot;]</div><div class="line">	  [runners.cache]</div></pre></td></tr></table></figure>
+<p>可以根据项目的实际情况修改上面image、extra_hosts等项。<br>修改完成之后，容器内执行 <code>gitlab-runner restart</code>重启gitlab-runner。</p>
+</li>
+</ol>
+<p>至此，基于gitlab的CI环境基本搭建起来，接下来会继续</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/11/10/设置Docker加速器/" itemprop="url">
                   设置Docker加速器
                 </a>
@@ -1642,7 +1824,7 @@ Consumer（消耗方）：任何从Kafka读取话题的组件可叫做消耗方�
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1650,7 +1832,7 @@ Consumer（消耗方）：任何从Kafka读取话题的组件可叫做消耗方�
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1659,7 +1841,7 @@ Consumer（消耗方）：任何从Kafka读取话题的组件可叫做消耗方�
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

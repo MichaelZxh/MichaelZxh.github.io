@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hadoop," />
+  <meta name="keywords" content="django,gitlab,ci," />
 
 
 
@@ -86,21 +86,21 @@
 
 
 
-<meta name="description" content="Hadoop介绍 参考链接：  http://www.tk4479.net/qq_20805103/article/details/78035032 http://www.tk4479.net/qq_20805103/article/details/78035032   简介  由Apache基金会所开发的分布式系统基础框架。用户可以在不了解分布式底层细节的情况下开发分布式程序。充分利用集群的威力">
-<meta name="keywords" content="Hadoop">
+<meta name="description" content="GitLab提供了可持续集成服务，使用GitLab提供的CI服务只需要两步即可完成：  在仓库根目录下创建一个 .gitlab-ci.yml文件， 为该项目指派一个Runner，当有合适请求或者push的时候就会触发build。  因此，本文将对整个搭建过程逐步分解并以实例进行说明。  一、创建一个.gitlab-ci.yml文件 .gtilab-ci.yml是位于git工程代码库的根目录下的一">
+<meta name="keywords" content="django,gitlab,ci">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hadoop介绍">
-<meta property="og:url" content="https://michaelzxh.github.io/2017/11/08/Hadoop介绍/index.html">
+<meta property="og:title" content="基于GitLab搭建Django项目的CI运行环境">
+<meta property="og:url" content="https://michaelzxh.github.io/2017/11/16/基于GitLab搭建Django项目的CI运行环境/index.html">
 <meta property="og:site_name" content="Zhangxinhe&#39;s Blog">
-<meta property="og:description" content="Hadoop介绍 参考链接：  http://www.tk4479.net/qq_20805103/article/details/78035032 http://www.tk4479.net/qq_20805103/article/details/78035032   简介  由Apache基金会所开发的分布式系统基础框架。用户可以在不了解分布式底层细节的情况下开发分布式程序。充分利用集群的威力">
+<meta property="og:description" content="GitLab提供了可持续集成服务，使用GitLab提供的CI服务只需要两步即可完成：  在仓库根目录下创建一个 .gitlab-ci.yml文件， 为该项目指派一个Runner，当有合适请求或者push的时候就会触发build。  因此，本文将对整个搭建过程逐步分解并以实例进行说明。  一、创建一个.gitlab-ci.yml文件 .gtilab-ci.yml是位于git工程代码库的根目录下的一">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://michaelzxh.github.io/images/1510120768968.png">
-<meta property="og:image" content="https://michaelzxh.github.io/images/1510121555037.png">
-<meta property="og:updated_time" content="2017-11-08T07:49:22.629Z">
+<meta property="og:image" content="https://michaelzxh.github.io/images/1510293390846.png">
+<meta property="og:image" content="https://michaelzxh.github.io/images/1510295253361.png">
+<meta property="og:updated_time" content="2017-11-16T09:36:14.271Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hadoop介绍">
-<meta name="twitter:description" content="Hadoop介绍 参考链接：  http://www.tk4479.net/qq_20805103/article/details/78035032 http://www.tk4479.net/qq_20805103/article/details/78035032   简介  由Apache基金会所开发的分布式系统基础框架。用户可以在不了解分布式底层细节的情况下开发分布式程序。充分利用集群的威力">
-<meta name="twitter:image" content="https://michaelzxh.github.io/images/1510120768968.png">
+<meta name="twitter:title" content="基于GitLab搭建Django项目的CI运行环境">
+<meta name="twitter:description" content="GitLab提供了可持续集成服务，使用GitLab提供的CI服务只需要两步即可完成：  在仓库根目录下创建一个 .gitlab-ci.yml文件， 为该项目指派一个Runner，当有合适请求或者push的时候就会触发build。  因此，本文将对整个搭建过程逐步分解并以实例进行说明。  一、创建一个.gitlab-ci.yml文件 .gtilab-ci.yml是位于git工程代码库的根目录下的一">
+<meta name="twitter:image" content="https://michaelzxh.github.io/images/1510293390846.png">
 
 
 
@@ -121,12 +121,12 @@
 
 
 
-  <link rel="canonical" href="https://michaelzxh.github.io/2017/11/08/Hadoop介绍/"/>
+  <link rel="canonical" href="https://michaelzxh.github.io/2017/11/16/基于GitLab搭建Django项目的CI运行环境/"/>
 
 
 <!-- 网页加载条 -->
 <script src="/js/src/pace.min.js"></script>
-  <title> Hadoop介绍 | Zhangxinhe's Blog </title>
+  <title> 基于GitLab搭建Django项目的CI运行环境 | Zhangxinhe's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -481,7 +481,7 @@
             
             
               
-                Hadoop介绍
+                基于GitLab搭建Django项目的CI运行环境
               
             
           </h1>
@@ -493,8 +493,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-11-08T14:35:17+08:00" content="2017-11-08">
-              2017-11-08
+            <time itemprop="dateCreated" datetime="2017-11-16T17:22:42+08:00" content="2017-11-16">
+              2017-11-16
             </time>
           </span>
 
@@ -507,8 +507,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/大数据/" itemprop="url" rel="index">
-                    <span itemprop="name">大数据</span>
+                  <a href="/categories/软件工程/" itemprop="url" rel="index">
+                    <span itemprop="name">软件工程</span>
                   </a>
                 </span>
 
@@ -545,76 +545,73 @@
       
 
       
-        <h3 id="Hadoop介绍"><a href="#Hadoop介绍" class="headerlink" title="Hadoop介绍"></a>Hadoop介绍</h3><blockquote>
-<p>参考链接：</p>
-<ul>
-<li><a href="http://www.tk4479.net/qq_20805103/article/details/78035032" target="_blank" rel="external">http://www.tk4479.net/qq_20805103/article/details/78035032</a></li>
-<li><a href="http://www.tk4479.net/qq_20805103/article/details/78035032" target="_blank" rel="external">http://www.tk4479.net/qq_20805103/article/details/78035032</a></li>
-</ul>
-</blockquote>
-<h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><blockquote>
-<ul>
-<li>由Apache基金会所开发的<strong>分布式系统基础框架</strong>。用户可以在不了解分布式底层细节的情况下开发分布式程序。充分利用集群的威力进行计算与存储。</li>
-<li>Hadoop框架的核心就是<strong>HDFS</strong>和<strong>MapReduce</strong>，HDFS为海量的数据提供了存储，MapReduce为海量数据提供了计算。</li>
-</ul>
-</blockquote>
-<h4 id="发展历史"><a href="#发展历史" class="headerlink" title="发展历史"></a>发展历史</h4><blockquote>
-<ul>
-<li>2006 - 2008，Hadoop的诞生阶段。只有国外少数几个互联网巨头在尝试，国内互联网行业在学习这项新技术。</li>
-<li>2008 - 2010，Hadoop少年阶段。在互联网行业已经开始投入实际应用，应用集中在网页存储检索，日志处理和用户行为分析等方面。</li>
-<li>2010 - 2015，Hadoop青年阶段。在互联网行业无不将Hadoop作为大数据计算的标准配置，且应用形式趋于多样化；企业计算领域开始实践基于Hadoop的大数据应用；在追求大数据处理能力的同时，也开始思考系统适配性和效率问题。</li>
-</ul>
-</blockquote>
-<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><blockquote>
-<ul>
-<li><strong>高可靠性。</strong> 因为它假设元素的计算与存储会失败，因此它维护了多个工作数据的副本，确保能够针对失败的节点进行重新分布处理。</li>
-<li><strong>高可扩展性。</strong> Hadoop是在可用的计算机集簇中分配数据并完成计算任务的。这些集簇可以很方便的扩展到上千个节点。</li>
-<li><strong>高效性。</strong>Hadoop能够在节点之间动态移动数据，并保证各个节点的动态平衡，因此处理速度很快。</li>
-<li><strong>高容错性。</strong>Hadoop能够自动保存数据的多个副本，并且能够自动将失败的任务重新分配。</li>
-<li><strong>低成本性。</strong>Hadoop是开源的，相比其他商用数据仓库，成本很低。</li>
-</ul>
-</blockquote>
-<hr>
-<h4 id="核心架构体系"><a href="#核心架构体系" class="headerlink" title="核心架构体系"></a>核心架构体系</h4><p><img src="/images/1510120768968.png" alt="Alt text"></p>
-<p>HDFS和MapReduce是Hadoop的两大核心，除此之外Hbase、Hive这两个核心工具也随着Hadoop发展变得越来越重要。同时，在Hadoop2.0后，在HDFS的基础上增加了YARN，是一个资源管理框架，在YARN上既可以放MapReduce，也可以放置其他的计算资源，主要是管理资源的，如CPU，硬盘，内存，网络等。</p>
-<h5 id="HDFS-体系架构"><a href="#HDFS-体系架构" class="headerlink" title="HDFS 体系架构"></a>HDFS 体系架构</h5><ol>
-<li><p>概念<br>Hadoop分布式文件系统(HDFS)被设计成适合运行在通用硬件上的分布式文件系统。HDFS是一个高度容错性的系统，能提供高吞吐量的数据访问，非常适合大规模数据集上的应用。<br>数据块（block）：大文件会被分割成多个block进行存储，block大小默认为64MB。每一个block会在多个datanode上存储多份副本，默认是3份。<br>NameNode：namenode负责管理文件目录、文件和block的对应关系以及block和datanode的对应关系。<br>DataNode：datanode就负责存储了，当然大部分容错机制都是在datanode上实现的。</p>
-</li>
-<li><p>工作机制<br>（1）客户把一个文件存入HDFS，其实HDFS会把这个文件切块后，分散存储在N台linux机器系统中（负责存储文件块的角色：data node）&lt;准确来说：切块的行为是由客户端决定的&gt;<br>（2）一旦文件被切块存储，那么，HDFS中就必须有一个机制，来记录用户的每一个文件的切块信息，及每一块的具体存储机器（负责记录块信息的角色是：name node）<br>（3）为了保证数据的安全性，HDFS可以将每一个文件块在集群中存放多个副本（到底存几个副本，是由当时存入该文件的客户端指定的）<br><strong>总结</strong>：一个HDFS系统，由一台运行了namenode的服务器，和N台运行了datanode的服务器组成！</p>
-</li>
-</ol>
-<h5 id="MapReduce体系架构"><a href="#MapReduce体系架构" class="headerlink" title="MapReduce体系架构"></a>MapReduce体系架构</h5><ol>
-<li>概念<br>MapReduce是Goodle公司的核心计算模型，它运行在大规模集群的并行计算过程中，并抽象为两个函数：map和reduce。一个MapReduce作业，会把输入的数据切分为若干块，先由map任务（task）一并行的方式处理它们，框架会先对map的输出进行排序，把所有具有相同的key值的value结合在一起，然后输入给reduce任务。接下来由reduce任务进行相应的并行计算。最后把计算的结果输出到HDFS存储起来。需要我们记忆的几个点，mapreduce作业执行涉及4个独立的实体：<br>（1）客户端（client）：编写mapreduce程序，配置作业，提交作业，这就是程序员完成的工作；<br>（2）JobTracker：初始化作业，分配作业，与TaskTracker通信，协调整个作业的执行；<br>（3）TaskTracker：保持与JobTracker的通信，在分配的数据片段上执行Map或Reduce任务，TaskTracker和JobTracker的不同有个很重要的方面，就是在执行任务时候TaskTracker可以有n多个，JobTracker则只会有一个（JobTracker只能有一个就和hdfs里namenode一样存在单点故障，我会在后面的mapreduce的相关问题里讲到这个问题的）<br>（4）HDFS：保存作业的数据、配置信息等等，最后的结果也是保存在hdfs上面 </li>
-</ol>
-<h5 id="Hive的体系架构"><a href="#Hive的体系架构" class="headerlink" title="Hive的体系架构"></a>Hive的体系架构</h5><ol>
-<li>概念<br>Hive是基于Hadoop的一个数据仓库工具(离线)，可以将结构化的数据文件映射为一张数据库表，并提供类SQL查询功能。</li>
-<li>为什么使用Hive<br>直接使用hadoop所面临的问题 ：人员学习成本太高、项目周期要求太短、MapReduce实现复杂查询逻辑开发难度太大<br>使用Hive：操作接口采用类SQL语法，提供快速开发的能力。、避免了去写MapReduce，减少开发人员的学习成本。功能扩展很方便。</li>
-</ol>
-<h5 id="Hbase数据管理"><a href="#Hbase数据管理" class="headerlink" title="Hbase数据管理"></a>Hbase数据管理</h5><ol>
-<li>概念<br>Hbase就是Hadoop database，可以提供数据的实时随机读写。Hbase与Mysql、Oralce、db2、SQLserver等关系型数据库不同，它是一个NoSQL数据库（非关系型数据库） 。<br>RowKey：是Byte array，是表中每条记录的“主键”，方便快速查找，Rowkey的设计非常重要。<br>Column Family：列族，拥有一个名称(string)，包含一个或者多个相关列<br>Column：属于某一个columnfamily，familyName:columnName，每条记录可动态添加<br>Version Number：类型为Long，默认值是系统时间戳，可由用户自定义<br>Value(Cell)：Byte array</li>
-<li>Hbase的表模型与关系型数据库的表模型区别：</li>
-</ol>
-<ul>
-<li>Hbase的表没有固定的字段定义 </li>
-<li>Hbase的表中每行存储的都是一些key-value对</li>
-<li>Hbase的表中有列族的划分，用户可以指定将哪些kv插入哪个列族 </li>
-<li>Hbase的表在物理存储上，是按照列族来分割的，不同列族的数据一定存储在不同的文件中</li>
-<li>Hbase的表中的每一行都固定有一个行键，而且每一行的行键在表中不能重复 </li>
-<li>Hbase中的数据，包含行键，包含key，包含value，都是byte[ ]类型，hbase不负责为用户维护数据类型 </li>
-<li>HBASE对事务的支持很差</li>
-</ul>
+        <blockquote>
+<p>GitLab提供了可持续集成服务，使用GitLab提供的CI服务只需要两步即可完成：</p>
 <ol>
-<li>使用场景</li>
+<li>在仓库根目录下创建一个 <em>.gitlab-ci.yml</em>文件，</li>
+<li>为该项目指派一个Runner，当有合适请求或者push的时候就会触发build。</li>
 </ol>
+<p>因此，本文将对整个搭建过程逐步分解并以实例进行说明。<br><img src="/images/1510293390846.png" alt="Alt text"></p>
+</blockquote>
+<h4 id="一、创建一个-gitlab-ci-yml文件"><a href="#一、创建一个-gitlab-ci-yml文件" class="headerlink" title="一、创建一个.gitlab-ci.yml文件"></a>一、创建一个<em>.gitlab-ci.yml</em>文件</h4><blockquote>
+<p><code>.gtilab-ci.yml</code>是位于git工程代码库的根目录下的一个YAML格式的配置文件，用于配置该工程的CI。每一次的push到软件仓库的操作，GitLab都会查看<code>.gitlab-ci.yml</code>文件，并根据该文件的内容，在Runners上启动对应的jobs。</p>
+</blockquote>
+<ol>
+<li><p>创建<code>.gitlab-ci.yml</code>文件<br><code>.gitlab-ci.yml</code>文件使用的YAML语法，需要注意缩进格式，不要使用tabs来代替空格进行缩进。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">before_script:</div><div class="line">    - </div><div class="line">unit_test:</div><div class="line">    script:</div><div class="line">        - cd /data/www/tanjia_real/project</div><div class="line">        - python manage.py makemigration</div><div class="line">        - python manage.py migrate</div><div class="line">        - python manage.py test ../tests/</div></pre></td></tr></table></figure>
+</li>
+<li><p>提交<code>.gitlab-ci.yml</code>文件</p>
+<blockquote>
+<p>git add .gitlab-ci.yml<br>git commit -m “Add .gitlab-ci.yml”<br>git push origin master</p>
+</blockquote>
+</li>
+<li><p>查看Pipelines<br>点击gitlab项目中的Pipelines将会看到我们添加的ci任务。<br><img src="/images/1510295253361.png" alt="Alt text"></p>
+</li>
+</ol>
+<h4 id="二、安装并配置Runner"><a href="#二、安装并配置Runner" class="headerlink" title="二、安装并配置Runner"></a>二、安装并配置Runner</h4><p>在GitLab中，Runners是用来执行你在<code>.gitlab-ci.yml</code>文件中定义的CI任务的。一个Runner可以是一个虚拟机，一个VPS，一个物理机或者一个docker容器。GitLab和Runners之间通过API接口进行通讯。所以唯一的要求是Runners能够与GitLab之间联网互通。<br>Runner分为两类：</p>
+<blockquote>
 <ul>
-<li>大数据量存储，大数据量高并发操作 </li>
-<li>需要对数据随机读写操作 </li>
-<li>读写访问均是非常简单的操作</li>
+<li>Shared Runner：能够执行所有的CI任务；</li>
+<li>Specific Runner：执行特定的某个任务；</li>
 </ul>
-<h5 id="Yarn体系架构"><a href="#Yarn体系架构" class="headerlink" title="Yarn体系架构"></a>Yarn体系架构</h5><ol>
-<li>概念<br>Yarn是一个分布式程序的运行调度平台，是hadoop2.X版本后新加入的模块。<br>yarn中有两大核心角色：<br>（1）Resource Manager<br>接受用户提交的分布式计算程序，并为其划分资源。<br>管理、监控各个Node Manager上的资源情况，以便于均衡负载。<br>（2）Node Manager<br>管理它所在机器的运算资源（cpu + 内存）。<br>负责接受Resource Manager分配的任务，创建容器、回收资源。</li>
-<li>工作机制<br><img src="/images/1510121555037.png" alt="Alt text"></li>
+</blockquote>
+<p>想要使用Runner也只需要两部：</p>
+<blockquote>
+<ul>
+<li>安装Runner</li>
+<li>配置Runner</li>
+</ul>
+</blockquote>
+<h5 id="安装Runner"><a href="#安装Runner" class="headerlink" title="安装Runner"></a>安装Runner</h5><p>正如上文中提到的，Runner可以有多种不同的运行方式，因此，对应的也有多种不同的安装方式，这里选择Docker安装的方式。</p>
+<ol>
+<li><p><strong>下载官方的gitlab-runner镜像</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git pull gitlab-runner</div></pre></td></tr></table></figure>
+<p>这里由于国内不可描述的原因，下载会比较慢，可以考虑配置一下<a href="https://www.daocloud.io/mirror#accelerator-doc" target="_blank" rel="external">DaoCloud的加速器</a></p>
+</li>
+<li><p><strong>启动gitlab镜像</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">docker run -dit --name gitlab_runner --restart always  \</div><div class="line">-v /data/www:/data/www/ \</div><div class="line">-v /var/run/docker.sock:/var/run/docker.sock gitlab-runner</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>注册runner</strong><br>首先进入容器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker exec -it d48 /bin/bash</div></pre></td></tr></table></figure>
+</li>
 </ol>
+<p> 在容器中执行如下命令：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gitlab-runner register</div></pre></td></tr></table></figure></p>
+<p> 然后按照如下提示，依次输入配置信息：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">1. Please enter the gitlab-ci coordinator URL (e.g. https://gitlab.com )</div><div class="line">    https://192.168.2.231/(注：这里填公司内部搭建的私有gitlab仓库地址)</div><div class="line">2. Please enter the gitlab-ci token for this runner</div><div class="line">    xxx(注：这里的token可以在项目的settings-&gt; Pipelines界面中找到)</div><div class="line">3. Please enter the gitlab-ci description for this runner：</div><div class="line">       my_project_runner_01</div><div class="line">4. Please enter the gitlab-ci tags for this runner (comma separated): </div><div class="line">       my_project_ci,gitlab_runner</div><div class="line">5. Whether to run untagged jobs [true/false]:</div><div class="line">       true</div><div class="line">6. Whether to lock Runner to current project [true/false]:</div><div class="line">       true</div><div class="line">7. Please enter the executor: ssh, docker+machine, docker-ssh+machine, kubernetes, docker, parallels, virtualbox, docker-ssh, shell:</div><div class="line">       docker(注：这里选择docker作为runner的执行器，gitlab-runner收到CI任务时，会启动一个docker容器，并在该容器中运行)</div><div class="line">8. Please enter the Docker image (eg. ruby:2.1):</div><div class="line">       my_project_image(注：由于CI任务需要的运行时环境被打包到了工程相关的镜像，因此这里指定工程镜像作为CI任务的执行镜像)</div></pre></td></tr></table></figure></p>
+<p> 按照如上步骤配置完成之后，在gitlab项目的settings -&gt; Pipelines页面应该可以看到我们注册的runner了。</p>
+<ol>
+<li><p><strong>配置gitlab仓库</strong><br>我们项目的gitlab是在公司内网上搭建的，公共DNS无法解析我们gitlab地址，也就意味着在启动执行CI任务的docker容器中无法解析gitlab仓库地址并将代码拉到docker容器中执行。解决方法有两个：</p>
+<ul>
+<li><strong>基于dnsmasq 搭建DNS服务器来解析gitlab仓库</strong>。笔者尝试过该方法，DNS服务器在宿主机搭建并测试成功，但是容器内仍然无法使用该DNS服务器解析，由于项目进度关系，没有继续深究原因。有兴趣的同学可以尝试一下。<a href="https://www.chenyudong.com/archives/docker-custom-hosts-network-via-dns.html" target="_blank" rel="external">方案说明</a></li>
+<li><strong>修改config.toml，启动时在/etc/hosts文件中添加gitlab仓库与IP地址的映射关系。</strong>该方案实验后可行，本小节按照该方案进行描述。</li>
+</ul>
+<p>这里是官方对config.toml文件的<a href="https://docs.gitlab.com.cn/runner/configuration/advanced-configuration.html" target="_blank" rel="external">配置介绍</a>，该文件位于gitlab-runner容器的/etc/gitlab-runner/config.toml，主要用来定义一个runner实体的。其中runner可以有很多的实现实体，这里我们只关注docker如何配置。其中官方给出的一个配置示例如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">[runners.docker]</div><div class="line"> host = &quot;&quot;</div><div class="line"> hostname = &quot;&quot;</div><div class="line"> tls_cert_path = &quot;/Users/ayufan/.boot2docker/certs&quot;</div><div class="line"> image = &quot;ruby:2.1&quot;</div><div class="line"> cpuset_cpus = &quot;0,1&quot;</div><div class="line"> dns = [&quot;8.8.8.8&quot;]</div><div class="line"> dns_search = [&quot;&quot;]</div><div class="line"> privileged = false</div><div class="line"> userns_mode = &quot;host&quot;</div><div class="line"> cap_add = [&quot;NET_ADMIN&quot;]</div><div class="line"> cap_drop = [&quot;DAC_OVERRIDE&quot;]</div><div class="line"> devices = [&quot;/dev/net/tun&quot;]</div><div class="line"> disable_cache = false</div><div class="line"> wait_for_services_timeout = 30</div><div class="line"> cache_dir = &quot;&quot;</div><div class="line"> volumes = [&quot;/data&quot;, &quot;/home/project/cache&quot;]</div><div class="line"> extra_hosts = [&quot;other-host:127.0.0.1&quot;]</div><div class="line"> shm_size = 300000</div><div class="line"> volumes_from = [&quot;storage_container:ro&quot;]</div><div class="line"> links = [&quot;mysql_container:mysql&quot;]</div><div class="line"> services = [&quot;mysql&quot;, &quot;redis:2.8&quot;, &quot;postgres:9&quot;]</div><div class="line"> allowed_images = [&quot;ruby:*&quot;, &quot;python:*&quot;, &quot;php:*&quot;]</div><div class="line"> allowed_services = [&quot;postgres:9.4&quot;, &quot;postgres:latest&quot;]</div></pre></td></tr></table></figure>
+<p>这里如果想要将gitlab仓库地址映射到具体的内网IP只需要配置<strong>extra_hosts</strong>参数即可，下面给出我在gitlab-runner中的[runners.docker]配置信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">[[runners]]</div><div class="line">	  name = &quot;real_runner_v1&quot;</div><div class="line">	  url = &quot;http://192.168.2.231/&quot;</div><div class="line">	  token = &quot;87d22accf48a1a7d7035014b278e1d&quot;</div><div class="line">	  executor = &quot;docker&quot;</div><div class="line">	  environment = [&quot;TZ=Asia/Shanghai&quot;,&quot;DB_HOST=192.168.4.23&quot;]</div><div class="line">	  [runners.docker]</div><div class="line">	    tls_verify = false</div><div class="line">	    image = &quot;tanjia.io:10080/real/real_ci&quot;</div><div class="line">	    privileged = false</div><div class="line">	    disable_cache = false</div><div class="line">	    volumes = [&quot;/cache&quot;]</div><div class="line">	    shm_size = 0</div><div class="line">	    extra_hosts = [&quot;gitlab.tanjiavr.com:192.168.2.231&quot;]</div><div class="line">	  [runners.cache]</div></pre></td></tr></table></figure>
+<p>可以根据项目的实际情况修改上面image、extra_hosts等项。<br>修改完成之后，容器内执行 <code>gitlab-runner restart</code>重启gitlab-runner。</p>
+</li>
+</ol>
+<p>至此，基于gitlab的CI环境基本搭建起来，接下来会继续</p>
 
       
     </div>
@@ -660,7 +657,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hadoop/" rel="tag"><i class="fa fa-tag"></i> Hadoop</a>
+            <a href="/tags/django/" rel="tag"><i class="fa fa-tag"></i> django</a>
+          
+            <a href="/tags/gitlab/" rel="tag"><i class="fa fa-tag"></i> gitlab</a>
+          
+            <a href="/tags/ci/" rel="tag"><i class="fa fa-tag"></i> ci</a>
           
         </div>
       
@@ -669,17 +670,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/08/什么是大数据？/" rel="next" title="什么是大数据？">
-                <i class="fa fa-chevron-left"></i> 什么是大数据？
+              <a href="/2017/11/10/设置Docker加速器/" rel="next" title="设置Docker加速器">
+                <i class="fa fa-chevron-left"></i> 设置Docker加速器
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/10/设置Docker加速器/" rel="prev" title="设置Docker加速器">
-                设置Docker加速器 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -854,7 +851,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hadoop介绍"><span class="nav-number">1.</span> <span class="nav-text">Hadoop介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#简介"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#发展历史"><span class="nav-number">1.2.</span> <span class="nav-text">发展历史</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#优点"><span class="nav-number">1.3.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#核心架构体系"><span class="nav-number">1.4.</span> <span class="nav-text">核心架构体系</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#HDFS-体系架构"><span class="nav-number">1.4.1.</span> <span class="nav-text">HDFS 体系架构</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#MapReduce体系架构"><span class="nav-number">1.4.2.</span> <span class="nav-text">MapReduce体系架构</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Hive的体系架构"><span class="nav-number">1.4.3.</span> <span class="nav-text">Hive的体系架构</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Hbase数据管理"><span class="nav-number">1.4.4.</span> <span class="nav-text">Hbase数据管理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Yarn体系架构"><span class="nav-number">1.4.5.</span> <span class="nav-text">Yarn体系架构</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、创建一个-gitlab-ci-yml文件"><span class="nav-number">1.</span> <span class="nav-text">一、创建一个.gitlab-ci.yml文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、安装并配置Runner"><span class="nav-number">2.</span> <span class="nav-text">二、安装并配置Runner</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#安装Runner"><span class="nav-number">2.1.</span> <span class="nav-text">安装Runner</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
