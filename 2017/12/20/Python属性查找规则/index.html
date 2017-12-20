@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="概率论," />
+  <meta name="keywords" content="Python," />
 
 
 
@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="排列组合@(概率论与数理统计) 排列：从给定个数的元素中取出指定个数的元素进行排序。组合：从给定个数的元素中取出指定个数的元素，不考虑排序。 加法原理定义：做一件事情，完成它有N类方式，第一类方式有$M_1$种方法，第二类方式有$M_2$种方法，$\cdots，$ 第N类方式有$M_N$中方法，那么完成事情总共有 $M_1 + M_2 + \cdots + M_N$种方法。  对于加法原理需要掌握">
-<meta name="keywords" content="概率论">
+<meta name="description" content="参考链接：http://www.cnblogs.com/xybaby/p/6270551.html  如果obj是某个类的实例，那么obj.name(以及等价的getattr(obj,’name’))首先调用__getattribute__。如果类定义了__getattr__方法，那么在__getattribute__中抛出AttributeError的时候就会调用到__getattr__，而对">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="概率论基础 - 排列组合">
-<meta property="og:url" content="https://michaelzxh.github.io/2017/11/05/排列组合/index.html">
+<meta property="og:title" content="Python属性查找规则">
+<meta property="og:url" content="https://michaelzxh.github.io/2017/12/20/Python属性查找规则/index.html">
 <meta property="og:site_name" content="Zhangxinhe&#39;s Blog">
-<meta property="og:description" content="排列组合@(概率论与数理统计) 排列：从给定个数的元素中取出指定个数的元素进行排序。组合：从给定个数的元素中取出指定个数的元素，不考虑排序。 加法原理定义：做一件事情，完成它有N类方式，第一类方式有$M_1$种方法，第二类方式有$M_2$种方法，$\cdots，$ 第N类方式有$M_N$中方法，那么完成事情总共有 $M_1 + M_2 + \cdots + M_N$种方法。  对于加法原理需要掌握">
+<meta property="og:description" content="参考链接：http://www.cnblogs.com/xybaby/p/6270551.html  如果obj是某个类的实例，那么obj.name(以及等价的getattr(obj,’name’))首先调用__getattribute__。如果类定义了__getattr__方法，那么在__getattribute__中抛出AttributeError的时候就会调用到__getattr__，而对">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-06T09:38:53.810Z">
+<meta property="og:updated_time" content="2017-12-20T10:29:33.064Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="概率论基础 - 排列组合">
-<meta name="twitter:description" content="排列组合@(概率论与数理统计) 排列：从给定个数的元素中取出指定个数的元素进行排序。组合：从给定个数的元素中取出指定个数的元素，不考虑排序。 加法原理定义：做一件事情，完成它有N类方式，第一类方式有$M_1$种方法，第二类方式有$M_2$种方法，$\cdots，$ 第N类方式有$M_N$中方法，那么完成事情总共有 $M_1 + M_2 + \cdots + M_N$种方法。  对于加法原理需要掌握">
+<meta name="twitter:title" content="Python属性查找规则">
+<meta name="twitter:description" content="参考链接：http://www.cnblogs.com/xybaby/p/6270551.html  如果obj是某个类的实例，那么obj.name(以及等价的getattr(obj,’name’))首先调用__getattribute__。如果类定义了__getattr__方法，那么在__getattribute__中抛出AttributeError的时候就会调用到__getattr__，而对">
 
 
 
@@ -118,12 +118,12 @@
 
 
 
-  <link rel="canonical" href="https://michaelzxh.github.io/2017/11/05/排列组合/"/>
+  <link rel="canonical" href="https://michaelzxh.github.io/2017/12/20/Python属性查找规则/"/>
 
 
 <!-- 网页加载条 -->
 <script src="/js/src/pace.min.js"></script>
-  <title> 概率论基础 - 排列组合 | Zhangxinhe's Blog </title>
+  <title> Python属性查找规则 | Zhangxinhe's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -478,7 +478,7 @@
             
             
               
-                概率论基础 - 排列组合
+                Python属性查找规则
               
             
           </h1>
@@ -490,8 +490,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-11-05T10:26:43+08:00" content="2017-11-05">
-              2017-11-05
+            <time itemprop="dateCreated" datetime="2017-12-20T18:29:03+08:00" content="2017-12-20">
+              2017-12-20
             </time>
           </span>
 
@@ -504,8 +504,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/数学基础/" itemprop="url" rel="index">
-                    <span itemprop="name">数学基础</span>
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
                   </a>
                 </span>
 
@@ -542,29 +542,57 @@
       
 
       
-        <h3 id="排列组合"><a href="#排列组合" class="headerlink" title="排列组合"></a>排列组合</h3><p>@(概率论与数理统计)</p>
-<p><strong>排列</strong>：从给定个数的元素中取出指定个数的元素进行排序。<br><strong>组合</strong>：从给定个数的元素中取出指定个数的元素，不考虑排序。</p>
-<h4 id="加法原理"><a href="#加法原理" class="headerlink" title="加法原理"></a>加法原理</h4><p><strong>定义</strong>：做一件事情，完成它有N类方式，第一类方式有$M_1$种方法，第二类方式有$M_2$种方法，$\cdots，$ 第N类方式有$M_N$中方法，那么完成事情总共有 $M_1 + M_2 + \cdots + M_N$种方法。</p>
-<blockquote>
-<p>对于加法原理需要掌握的是分类思想，对于分类问题要掌握加法原理。总的情况数等于每类情况属的总和。</p>
+        <blockquote>
+<p>参考链接：<a href="http://www.cnblogs.com/xybaby/p/6270551.html" target="_blank" rel="external">http://www.cnblogs.com/xybaby/p/6270551.html</a></p>
 </blockquote>
-<p><strong>组合数公式</strong></p>
-<blockquote>
-<p>$C_N^M = \cfrac {A_N^M}{M!} = C_N^{N-M}$</p>
-</blockquote>
-<hr>
-<h4 id="乘法原理"><a href="#乘法原理" class="headerlink" title="乘法原理"></a>乘法原理</h4><p><strong>定义</strong>：做一件事情需要分为n个步骤，做第一步有$m_1$种不同的做法，第二步有$m_2$种不同的做法，$\cdots，$第m步有$m_n$种做法，那么完成这件事情共有 $N = m_1 \times m_2 \cdots \times m_n$种不同方法。</p>
-<p><strong>排列数公式</strong></p>
-<blockquote>
-<p>$A_n^m = n \times (n - 1) \times \cdots \times(n - m + 1) = \cfrac {n!}{(n-m)!}$ </p>
-</blockquote>
-<hr>
-<h4 id="二者区别"><a href="#二者区别" class="headerlink" title="二者区别"></a>二者区别</h4><blockquote>
-<ul>
-<li>如果完成一件事情有几类方法，无论哪一类方法都能完成这件事，运用加法原理；</li>
-<li>如果完成一件事情要分成几个步骤，而无论哪个步骤都只能完成这个事情的其中一部分，只有每一步都完成了，事情才得以完成，运用乘法原理。</li>
+<p>如果obj是某个类的实例，那么obj.name(以及等价的getattr(obj,’name’))首先调用<code>__getattribute__</code>。<br>如果类定义了<code>__getattr__</code>方法，那么在<code>__getattribute__</code>中抛出<code>AttributeError</code>的时候就会调用到<code>__getattr__</code>，而对于描述符(<code>__get__</code>)的调用，则是发生在<code>__getattribute__</code>内部的。</p>
+<h4 id="实例属性查找规则"><a href="#实例属性查找规则" class="headerlink" title="实例属性查找规则"></a>实例属性查找规则</h4><p>obj = Clz()，那么obj.attr顺序如下：</p>
+<ol>
+<li>如果attr是出现在Clz或其基类的<code>__dict__</code>中，且attr是数据描述器，那么调用其<code>__get__</code>方法；</li>
+<li>如果attr出现在obj的<code>__dict__</code>中，那么直接返回<code>obj.__dict__[&#39;attr&#39;]</code>;</li>
+<li>如果attr出现在Clz或其基类的<code>__dict__</code>中：<ul>
+<li>如果attr是非数据描述器，那么调用其<code>__get__</code>方法；</li>
+<li>返回<code>__dict__[&#39;attr&#39;]</code></li>
 </ul>
+</li>
+<li>如果Clz有<code>__getattr__</code>方法，调用<code>__getattr__</code>方法；</li>
+<li>抛出<code>AttributeError</code></li>
+</ol>
+<blockquote>
+<p>属性查找：<br>第一优先级：类中定义的资料描述器<br>第二优先级：实例的<code>__dict__</code>属性<br>第三优先级：类中的<code>__dict__</code>属性，该优先级中非资料描述器优先于<code>__dict__</code>属性<br>第四优先级：类的<code>__getattr__</code>方法</p>
 </blockquote>
+<h5 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">class descriptor(object):</div><div class="line">    def __init__(self,val):</div><div class="line">        self.val = val</div><div class="line"></div><div class="line">    def __get__(self, instance, owner):</div><div class="line">        print(&apos;desc: instance is %s, owner is %s&apos;%(instance, owner))</div><div class="line">        return self.val</div><div class="line"></div><div class="line">    # def __set__(self, instance, value):</div><div class="line">    #     print(&apos;desc: instance is %s, value is %s&apos;)</div><div class="line">    #     self.val = value</div><div class="line"></div><div class="line">class bar(object):</div><div class="line">    bar_num = 1</div><div class="line">    des = descriptor(10)</div><div class="line">    def __init__(self,n):</div><div class="line">        self.num = n</div><div class="line">        self.des = &apos;descriptor&apos;</div><div class="line"></div><div class="line">    def __getattr__(self, item):</div><div class="line">        print(&apos;in bar getattr, item is %s&apos;%item)</div><div class="line"></div><div class="line">b = bar(10)</div><div class="line">print(&apos;b.__dict__ is: %s&apos;%(b.__dict__))</div><div class="line">print(b.des)</div></pre></td></tr></table></figure>
+<ol>
+<li>按照上面代码执行结果如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">b.__dict__ is: &#123;&apos;num&apos;: 10, &apos;des&apos;: &apos;descriptor&apos;&#125;</div><div class="line"></div><div class="line">bar.__dict__ is: &#123;&apos;__module__&apos;: &apos;__main__&apos;, &apos;bar_num&apos;: 1, &apos;des&apos;: &lt;__main__.descriptor object at 0x000001A0DCC05DD8&gt;, &apos;__init__&apos;: &lt;function bar.__init__ at 0x000001A0DCC0F7B8&gt;, &apos;__getattr__&apos;: &lt;function bar.__getattr__ at 0x000001A0DCC0F840&gt;, &apos;__doc__&apos;: None&#125;</div><div class="line"></div><div class="line">descriptor</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>des在类和实例中同时有定义，且descriptor是非资料描述器，按照上面描述的查找顺序，符合第2条：<em>出现在obj的<code>__dict__</code>中，直接返回<code>obj.__dict__[&#39;attr&#39;]</code></em>。</p>
+<ol>
+<li>如果将descriptor类中的<code>__set__</code>方法的注释放开，descriptor将变成一个资料描述器，按照上述查找顺序，符合第1条：<em>attr出现在Clz或其基类中的<code>__dict__</code>，且attr是资料描述器，那么调用其<code>__get__</code>方法</em>，执行的结果如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">desc: instance is &lt;__main__.bar object at 0x000001AD0DA85E10&gt;, value is descriptor</div><div class="line"></div><div class="line">b.__dict__ is: &#123;&apos;num&apos;: 10&#125;</div><div class="line"></div><div class="line">bar.__dict__ is: &#123;&apos;__module__&apos;: &apos;__main__&apos;, &apos;bar_num&apos;: 1, &apos;des&apos;: &lt;__main__.descriptor object at 0x000001AD0DA85DD8&gt;, &apos;__init__&apos;: &lt;function bar.__init__ at 0x000001AD0DA8F840&gt;, &apos;__getattr__&apos;: &lt;function bar.__getattr__ at 0x000001AD0DA8F8C8&gt;, &apos;__doc__&apos;: None&#125;</div><div class="line"></div><div class="line">desc: instance is &lt;__main__.bar object at 0x000001AD0DA85E10&gt;, owner is &lt;class &apos;__main__.bar&apos;&gt;</div><div class="line"></div><div class="line">descriptor</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>需要注意的一点是：<strong>此时des属性看上去在类中和实例中均有定义，实际上实例的<code>__dict__</code>中并没有新增des属性，实例中只是对资料描述器进行赋值操作（即调用了资料描述器的<code>__set__</code>方法）</strong>。<br>可以推理出：<strong>类中的非资料描述器可以被实例的属性重名覆盖，类中的资料描述器是唯一的，无法被实例重名覆盖的。</strong><br>类中定义的资料描述器具有最高的查找优先级。</p>
+<ol>
+<li>如果注释掉bar类中的<code>self.des=&#39;descriptor&#39;</code>，同时注释调用descriptor类中的<code>__set__</code>方法，desctor再次变为非资料描述器，在实例b的<code>__dict__</code>中也将无法找到名为des的属性。而在类bar的<code>__dict__</code>中可以找到des属性，且为非资料描述器，按照上述查找顺序，将触发规则3.1：<em>attr出现在Clz或其基类的<code>__dict__</code>中，且attr为非资料描述器，调用其<code>__get__</code>方法</em>，执行结果如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">b.__dict__ is: &#123;&apos;num&apos;: 10&#125;</div><div class="line"></div><div class="line">bar.__dict__ is: &#123;&apos;__module__&apos;: &apos;__main__&apos;, &apos;bar_num&apos;: 1, &apos;des&apos;: &lt;__main__.descriptor object at 0x0000021053625E10&gt;, &apos;__init__&apos;: &lt;function bar.__init__ at 0x000002105362F7B8&gt;, &apos;__getattr__&apos;: &lt;function bar.__getattr__ at 0x000002105362F840&gt;, &apos;__dict__&apos;: &lt;attribute &apos;__dict__&apos; of &apos;bar&apos; objects&gt;, &apos;__weakref__&apos;: &lt;attribute &apos;__weakref__&apos; of &apos;bar&apos; objects&gt;, &apos;__doc__&apos;: None&#125;</div><div class="line"></div><div class="line">desc: instance is &lt;__main__.bar object at 0x0000021053625E48&gt;, owner is &lt;class &apos;__main__.bar&apos;&gt;</div><div class="line"></div><div class="line">10</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="类属性查找规则"><a href="#类属性查找规则" class="headerlink" title="类属性查找规则"></a>类属性查找规则</h4><p>类也是对象，类是元类(metaclass)的实例，所以类属性的查找顺序基本同上。区别在于第2步，由于Clz可能有基类，所以实在Clz及其基类的<code>__dict__</code>中查找attr，注意这里的查找并不是直接返回<code>clz.__dict__[&#39;attr&#39;]</code>，具体来说，第二步分为以下两种情况：</p>
+<ul>
+<li>如果<code>clz.__dict__[&#39;attr&#39;]</code>是一个descriptor（不管是否资料描述器），都调用其<code>__get__</code>方法</li>
+<li>否则返回<code>clz.__dict__[&#39;attr&#39;]</code></li>
+</ul>
+<h4 id="属性赋值"><a href="#属性赋值" class="headerlink" title="属性赋值"></a>属性赋值</h4><p>Python的属性赋值也会受到描述器的影响，同时也会受到<code>__setattr__</code>函数的影响。<br>对于属性赋值，obj = Clz()，那么obj.attr = var，按照如下顺序：</p>
+<ol>
+<li>如果Clz定义了<code>__setattr__</code>方法，那么调用该方法；</li>
+<li>如果attr出现在Clz或其基类的<code>__dict__</code>中，且attr是资料描述器，那么调用其<code>__set__</code>方法</li>
+<li>等价调用<code>obj.__dict__[&#39;attr&#39;] = var</code></li>
+</ol>
+<h5 id="测试代码-1"><a href="#测试代码-1" class="headerlink" title="测试代码"></a>测试代码</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">class descriptor(object):</div><div class="line">    def __init__(self,val):</div><div class="line">        self.val = val</div><div class="line"></div><div class="line">    def __get__(self, instance, owner):</div><div class="line">        print(&apos;desc: instance is %s, owner is %s&apos;%(instance, owner))</div><div class="line">        return self.val</div><div class="line"></div><div class="line">    def __set__(self, instance, value):</div><div class="line">        print(&apos;desc: instance is %s, value is %s&apos;%(instance,value))</div><div class="line">        self.val = value</div><div class="line"></div><div class="line"></div><div class="line">class bar(object):</div><div class="line">    bar_num = 1</div><div class="line">    des = descriptor(10)</div><div class="line">    def __init__(self,n):</div><div class="line">        self.num = n</div><div class="line">        # self.des = &apos;descriptor&apos;</div><div class="line"></div><div class="line">    def __getattr__(self, item):</div><div class="line">        print(&apos;in bar getattr, item is %s&apos;%item)</div><div class="line"></div><div class="line">    def __setattr__(self, key, value):</div><div class="line">        print(&apos;in bar setattr, key is %s, val is %s&apos;%(key,value))</div><div class="line">        self.__dict__[key] = value</div><div class="line"></div><div class="line">b = bar(10)</div><div class="line">print(&apos;b.__dict__ is: %s&apos;%(b.__dict__))</div><div class="line">print(b.des)</div><div class="line">b.des = 25</div><div class="line">print(&apos;b.__dict__ is: %s&apos;%b.__dict__)</div><div class="line">print(b.des)</div></pre></td></tr></table></figure>
+<p>上述代码执行结果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">in bar setattr, key is num, val is 10</div><div class="line">b.__dict__ is: &#123;&apos;num&apos;: 10&#125;</div><div class="line">desc: instance is &lt;__main__.bar object at 0x0000021D31875E80&gt;, owner is &lt;class &apos;__main__.bar&apos;&gt;</div><div class="line">10</div><div class="line">in bar setattr, key is des, val is 25</div><div class="line">b.__dict__ is: &#123;&apos;num&apos;: 10, &apos;des&apos;: 25&#125;</div><div class="line">desc: instance is &lt;__main__.bar object at 0x0000021D31875E80&gt;, owner is &lt;class &apos;__main__.bar&apos;&gt;</div><div class="line">10</div></pre></td></tr></table></figure></p>
+<p>可以看出，虽然des是资料描述器定义在类中，但是类中同时定义了<code>__setattr__</code>，因此会调用该方法，而不是调用资料描述器的<code>__set__</code>方法。<br>需要注意的是，虽然在bar实例中设置了des的属性，但调用的时候，按照上述的属性查找规则，只会显示出资料描述器的des值。</p>
+<p>如果注释掉bar中的<code>__setattr__</code>方法，执行结果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">b.__dict__ is: &#123;&apos;num&apos;: 10&#125;</div><div class="line">desc: instance is &lt;__main__.bar object at 0x000001B18CC85E80&gt;, owner is &lt;class &apos;__main__.bar&apos;&gt;</div><div class="line">10</div><div class="line">desc: instance is &lt;__main__.bar object at 0x000001B18CC85E80&gt;, value is 25</div><div class="line">b.__dict__ is: &#123;&apos;num&apos;: 10&#125;</div><div class="line">desc: instance is &lt;__main__.bar object at 0x000001B18CC85E80&gt;, owner is &lt;class &apos;__main__.bar&apos;&gt;</div><div class="line">25</div></pre></td></tr></table></figure></p>
+<p>此时调用的就是资料描述器的<code>__set__</code>方法。</p>
+<p>如果再进一步注释掉descriptor类的<code>__set__</code>方法，那么将调用<code>b.__dict__[&#39;des&#39;] = 25</code>，执行结果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">b.__dict__ is: &#123;&apos;num&apos;: 10&#125;</div><div class="line">desc: instance is &lt;__main__.bar object at 0x00000263E2DD5E48&gt;, owner is &lt;class &apos;__main__.bar&apos;&gt;</div><div class="line">10</div><div class="line">b.__dict__ is: &#123;&apos;num&apos;: 10, &apos;des&apos;: 25&#125;</div><div class="line">25</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -610,7 +638,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/概率论/" rel="tag"><i class="fa fa-tag"></i> 概率论</a>
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
           
         </div>
       
@@ -619,17 +647,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/05/hexo-常用命令/" rel="next" title="hexo 常用命令">
-                <i class="fa fa-chevron-left"></i> hexo 常用命令
+              <a href="/2017/12/20/leetcode算法实例-链表/" rel="next" title="leetcode算法实例 - 单链表">
+                <i class="fa fa-chevron-left"></i> leetcode算法实例 - 单链表
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/07/HTTPS详解/" rel="prev" title="HTTPS详解">
-                HTTPS详解 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -804,7 +828,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#排列组合"><span class="nav-number">1.</span> <span class="nav-text">排列组合</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#加法原理"><span class="nav-number">1.1.</span> <span class="nav-text">加法原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#乘法原理"><span class="nav-number">1.2.</span> <span class="nav-text">乘法原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二者区别"><span class="nav-number">1.3.</span> <span class="nav-text">二者区别</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#实例属性查找规则"><span class="nav-number">1.</span> <span class="nav-text">实例属性查找规则</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#测试代码"><span class="nav-number">1.1.</span> <span class="nav-text">测试代码</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类属性查找规则"><span class="nav-number">2.</span> <span class="nav-text">类属性查找规则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性赋值"><span class="nav-number">3.</span> <span class="nav-text">属性赋值</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#测试代码-1"><span class="nav-number">3.1.</span> <span class="nav-text">测试代码</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
