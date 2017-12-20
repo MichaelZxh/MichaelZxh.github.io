@@ -479,6 +479,213 @@
             
               
                 
+                <a class="post-title-link" href="/2017/12/20/leetcode算法实例-链表/" itemprop="url">
+                  leetcode算法实例 - 单链表
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-12-20T14:03:47+08:00" content="2017-12-20">
+              2017-12-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+<!-- 自定义，用于添加摘要图片，文章中不显示 -->
+        
+<!-- 自定义结束 -->
+        
+          
+            <h4 id="Reverse-Linked-List"><a href="#Reverse-Linked-List" class="headerlink" title="Reverse Linked List"></a>Reverse Linked List</h4><h5 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h5><blockquote>
+<p>Reverse a singly linked list.</p>
+</blockquote>
+<h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><ol>
+<li>将单链表储存为数组，然后按照数组的索引逆序进行反转。（浪费空间）</li>
+<li>使用3个指针遍历单链表，逐个链接点进行反转。</li>
+<li>从第2个节点到第N个节点，依次逐节点插入到第1个节点(head节点)之后，最后将第一个节点挪到新表的表尾</li>
+<li>递归。</li>
+</ol>
+<h4 id="实现代码："><a href="#实现代码：" class="headerlink" title="实现代码："></a>实现代码：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"># 三指针实现法, 其中t指向尾部，p和q配合使用遍历整个链表</div><div class="line">def reverseList(head):</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    :type head: ListNode</div><div class="line">    :rtype: ListNode</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    if not head or head.next is None:</div><div class="line">        return head</div><div class="line">	t = None</div><div class="line">	p = head</div><div class="line">	q = head.next</div><div class="line">	while q:</div><div class="line">	   p.next = t</div><div class="line">	   t = p</div><div class="line">	   p = q</div><div class="line">	   q = q.next</div><div class="line">	   p.next = t</div><div class="line">	   </div><div class="line">    return p</div></pre></td></tr></table></figure>
+<h4 id="Odd-Even-Linked-List"><a href="#Odd-Even-Linked-List" class="headerlink" title="Odd Even Linked List"></a>Odd Even Linked List</h4><h5 id="问题描述：-1"><a href="#问题描述：-1" class="headerlink" title="问题描述："></a>问题描述：</h5><blockquote>
+<p>Given a singly linked list, group all odd nodes together followed by the even nodes. Please note here we are talking about the node number and not the value in the nodes.</p>
+<p>You should try to do it in place. The program should run in O(1) space complexity and O(nodes) time complexity.</p>
+<p>Example:<br>Given 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL,<br>return 1-&gt;3-&gt;5-&gt;2-&gt;4-&gt;NULL.</p>
+<p>Note:<br>The relative order inside both the even and odd groups should remain as it was in the input.<br>The first node is considered odd, the second node even and so on …</p>
+</blockquote>
+<h5 id="解题思路：-1"><a href="#解题思路：-1" class="headerlink" title="解题思路："></a>解题思路：</h5><blockquote>
+<p>创建两个新的空链表，遍历原始链表，把奇数位置的节点添加到第一个小链表，把偶数位置的节点添加到第二个小链表。</p>
+</blockquote>
+<h5 id="实现代码：-1"><a href="#实现代码：-1" class="headerlink" title="实现代码："></a>实现代码：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">def odd_even_list(head):</div><div class="line">    if head is None: return head</div><div class="line">    odd = oddHead = head</div><div class="line">    even = evenHead = head.next</div><div class="line">    while even and even.next:</div><div class="line">        odd.next = even.next</div><div class="line">        odd = odd.next</div><div class="line">        even.next = odd.next</div><div class="line">        even = even.next</div><div class="line">    odd.next = evenHead</div><div class="line">    return oddHead</div></pre></td></tr></table></figure>
+<h4 id="Add-Two-Numbers"><a href="#Add-Two-Numbers" class="headerlink" title="Add Two Numbers"></a>Add Two Numbers</h4><h5 id="问题描述：-2"><a href="#问题描述：-2" class="headerlink" title="问题描述："></a>问题描述：</h5><blockquote>
+<p>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p>
+<p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p>
+<p>Example</p>
+<p>Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)<br>Output: 7 -&gt; 0 -&gt; 8<br>Explanation: 342 + 465 = 807.</p>
+</blockquote>
+<h5 id="解题思路：-2"><a href="#解题思路：-2" class="headerlink" title="解题思路："></a>解题思路：</h5><blockquote>
+<p>新建一个空的链表，依次遍历两个已知的链表，将两个链表对应位置的内容相加，同时考虑进位。</p>
+</blockquote>
+<h5 id="实现代码：-2"><a href="#实现代码：-2" class="headerlink" title="实现代码："></a>实现代码：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">def addTwoNumbers(l1, l2):</div><div class="line">        &quot;&quot;&quot;</div><div class="line">        :type l1: ListNode</div><div class="line">        :type l2: ListNode</div><div class="line">        :rtype: ListNode</div><div class="line">        &quot;&quot;&quot;</div><div class="line">        carry = 0</div><div class="line">        n = head = ListNode(0)</div><div class="line">        while l1 or l2 or carry:</div><div class="line">            v1,v2 = 0,0</div><div class="line">            if l1:</div><div class="line">                v1 = l1.val</div><div class="line">                l1 = l1.next</div><div class="line">            if l2:</div><div class="line">                v2 = l2.val</div><div class="line">                l2 = l2.next</div><div class="line">            </div><div class="line">            sum = v1 + v2 + carry</div><div class="line">            result = sum % 10</div><div class="line">            carry = sum / 10</div><div class="line">            cur_node = ListNode(result)</div><div class="line">            n.next = cur_node</div><div class="line">            n = cur_node</div><div class="line">            </div><div class="line">        return head.next</div></pre></td></tr></table></figure>
+<h4 id="Reverse-Linked-List-II"><a href="#Reverse-Linked-List-II" class="headerlink" title="Reverse Linked List II"></a>Reverse Linked List II</h4><h5 id="问题描述：-3"><a href="#问题描述：-3" class="headerlink" title="问题描述："></a>问题描述：</h5><blockquote>
+<p>Reverse a linked list from position m to n. Do it in-place and in one-pass.<br>For example: Given 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;nullptr, m = 2 and n = 4,<br>return 1-&gt;4-&gt;3-&gt;2-&gt;5-&gt;nullptr.<br>Note: Given m, n satisfy the following condition: $1 \leq m \leq n \leq 1≤m≤n≤$ length of list.</p>
+</blockquote>
+<h5 id="解题思路：-3"><a href="#解题思路：-3" class="headerlink" title="解题思路："></a>解题思路：</h5><blockquote>
+<p>首先找到[m,n]的链表，然后反转该链表，然后让m-1和n连接起来，m和n + 1连接起来。</p>
+</blockquote>
+<h4 id="实现代码：-3"><a href="#实现代码：-3" class="headerlink" title="实现代码："></a>实现代码：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">def reverseBetween(head, m, n):</div><div class="line">    if m == n:</div><div class="line">        return head</div><div class="line"></div><div class="line">    dummyNode = ListNode(0)</div><div class="line">    dummyNode.next = head</div><div class="line">    pre = dummyNode</div><div class="line"></div><div class="line">    for i in range(m - 1):</div><div class="line">        pre = pre.next</div><div class="line">    </div><div class="line">    # reverse the [m, n] nodes</div><div class="line">    reverse = None</div><div class="line">    cur = pre.next</div><div class="line">    for i in range(n - m + 1):</div><div class="line">        next = cur.next</div><div class="line">        cur.next = reverse</div><div class="line">        reverse = cur</div><div class="line">        cur = next</div><div class="line"></div><div class="line">    pre.next.next = cur</div><div class="line">    pre.next = reverse</div><div class="line"></div><div class="line">    return dummyNode.next</div></pre></td></tr></table></figure>
+<h4 id="Partition-List"><a href="#Partition-List" class="headerlink" title="Partition List"></a>Partition List</h4><h5 id="问题描述：-4"><a href="#问题描述：-4" class="headerlink" title="问题描述："></a>问题描述：</h5><blockquote>
+<p>Given a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x.<br>You should preserve the original relative order of the nodes in each of the two partitions.<br>For example, Given 1-&gt;4-&gt;3-&gt;2-&gt;5-&gt;2 and x = 3, return 1-&gt;2-&gt;2-&gt;4-&gt;3-&gt;5.</p>
+</blockquote>
+<h5 id="解题思路：-4"><a href="#解题思路：-4" class="headerlink" title="解题思路："></a>解题思路：</h5><blockquote>
+<p>分别创建两个链表，其中一个用来存储所有大于等于x的节点，一个用来存储小于x的节点，然后将小元素的链表末尾链接到大元素的链表头。</p>
+</blockquote>
+<h5 id="实现代码：-4"><a href="#实现代码：-4" class="headerlink" title="实现代码："></a>实现代码：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">def partition(head, x):</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    :type head: ListNode</div><div class="line">    :type x: int</div><div class="line">    :rtype: ListNode</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    little_head = little_node = ListNode(-1)</div><div class="line">    greater_head = greater_node = ListNode(-1)</div><div class="line">    </div><div class="line">    p = head</div><div class="line">    while p:</div><div class="line">        if p.val &lt; x:</div><div class="line">            little_node.next = p</div><div class="line">            little_node = p</div><div class="line">        else:</div><div class="line">            greater_node.next = p</div><div class="line">            greater_node = p</div><div class="line">            </div><div class="line">        p = p.next</div><div class="line">    </div><div class="line">    little_node.next = greater_head.next</div><div class="line">    greater_node.next = None</div><div class="line">    return little_head.next</div></pre></td></tr></table></figure>
+<h4 id="Remove-Duplicates-from-Sorted-List-II"><a href="#Remove-Duplicates-from-Sorted-List-II" class="headerlink" title="Remove Duplicates from Sorted List II"></a>Remove Duplicates from Sorted List II</h4><h5 id="问题描述：-5"><a href="#问题描述：-5" class="headerlink" title="问题描述："></a>问题描述：</h5><blockquote>
+<p>Given a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list.<br>For example,<br>Given 1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5, return 1-&gt;2-&gt;5.<br>Given 1-&gt;1-&gt;1-&gt;2-&gt;3, return 2-&gt;3.</p>
+</blockquote>
+<h5 id="解题思路：-5"><a href="#解题思路：-5" class="headerlink" title="解题思路："></a>解题思路：</h5><blockquote>
+<p>遍历整个链表，新建一个新的头结点，如果发现其中存在不重复的节点，将节点加入到新的链表后面，原来整个链表遍历完成之后，返回新的链表。</p>
+</blockquote>
+<h5 id="实现代码：-5"><a href="#实现代码：-5" class="headerlink" title="实现代码："></a>实现代码：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">def deleteDuplicates(head):</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    :type head: ListNode</div><div class="line">    :rtype: ListNode</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    if not head or head.next is None:</div><div class="line">        return head</div><div class="line">    </div><div class="line">    start_node = None</div><div class="line">    cur_node = None</div><div class="line">    repeat_num = head.val if head.val == head.next.val else None</div><div class="line">    while head.next:</div><div class="line">        if head.val == repeat_num:</div><div class="line">            pass</div><div class="line">        elif head.val == head.next.val:</div><div class="line">            repeat_num = head.val</div><div class="line">        else:</div><div class="line">            if start_node is None:</div><div class="line">                start_node = head</div><div class="line">                cur_node = head</div><div class="line">            else:</div><div class="line">                cur_node.next = head</div><div class="line">                cur_node = head </div><div class="line">            </div><div class="line">        head = head.next</div><div class="line">    </div><div class="line">    if cur_node:</div><div class="line">        if head.val != cur_node.val and head.val != repeat_num:</div><div class="line">            cur_node.next = head</div><div class="line">            cur_node.next.next = None</div><div class="line">        else:</div><div class="line">            cur_node.next = None</div><div class="line">    else:</div><div class="line">        if repeat_num != head.val:</div><div class="line">            start_node = head</div><div class="line">            start_node.next = None</div><div class="line">        </div><div class="line">    return start_node</div></pre></td></tr></table></figure>
+<h4 id="Remove-Nth-Node-From-End-of-List"><a href="#Remove-Nth-Node-From-End-of-List" class="headerlink" title="Remove Nth Node From End of List"></a>Remove Nth Node From End of List</h4><h5 id="问题描述：-6"><a href="#问题描述：-6" class="headerlink" title="问题描述："></a>问题描述：</h5><blockquote>
+<p>Given a linked list, remove the nth node from the end of list and return its head.</p>
+<p>For example,</p>
+<p>  Given linked list: 1-&gt;2-&gt;3-&gt;4-&gt;5, and n = 2.</p>
+<p>  After removing the second node from the end, the linked list becomes 1-&gt;2-&gt;3-&gt;5.</p>
+<p>Note:<br>Given n will always be valid.<br>Try to do this in one pass. </p>
+</blockquote>
+<h5 id="解题思路：-6"><a href="#解题思路：-6" class="headerlink" title="解题思路："></a>解题思路：</h5><blockquote>
+<p>用两个指针一前一后遍历链表，在第一指针遍历了n节点后，第二个指针开始和它同步前进。需要注意的是如果去除的正好是头节点，那情况就有些特殊，需要分类讨论。<strong>可以添加一个假的头节点，使原来的头节点也变为普通的节点，这样就不用分类了</strong>。关于节点去除，就是通过前一个节点的指针指向当前节点的后一个节点。</p>
+</blockquote>
+<h5 id="实现代码：-6"><a href="#实现代码：-6" class="headerlink" title="实现代码："></a>实现代码：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">def removeNthFromEnd(self, head, n):</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    :type head: ListNode</div><div class="line">    :type n: int</div><div class="line">    :rtype: ListNode</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    if not head:</div><div class="line">        return head</div><div class="line">    dummy = ListNode(-1)</div><div class="line">    dummy.next=head</div><div class="line">    prev = dummy</div><div class="line">    cur = dummy</div><div class="line">    while prev and n &gt;= 0:</div><div class="line">        prev = prev.next</div><div class="line">        n -= 1</div><div class="line">    while prev:</div><div class="line">        prev = prev.next</div><div class="line">        cur = cur.next</div><div class="line">    cur.next = cur.next.next</div><div class="line">    return dummy.next</div></pre></td></tr></table></figure>
+<h4 id="Swap-Nodes-in-Pairs"><a href="#Swap-Nodes-in-Pairs" class="headerlink" title="Swap Nodes in Pairs"></a>Swap Nodes in Pairs</h4><h5 id="问题描述：-7"><a href="#问题描述：-7" class="headerlink" title="问题描述："></a>问题描述：</h5><blockquote>
+<p> Given a linked list, swap every two adjacent nodes and return its head.</p>
+<p>For example,<br>Given 1-&gt;2-&gt;3-&gt;4, you should return the list as 2-&gt;1-&gt;4-&gt;3.</p>
+<p>Your algorithm should use only constant space. You may not modify the values in the list, only nodes itself can be changed.</p>
+</blockquote>
+<h5 id="解题思路：-7"><a href="#解题思路：-7" class="headerlink" title="解题思路："></a>解题思路：</h5><blockquote>
+<p>比较常见的链表操作。增加一个头结点，从真实的头结点开始遍历，每次遍历，需要注意迭代子的重新赋值。</p>
+</blockquote>
+<h5 id="实现代码：-7"><a href="#实现代码：-7" class="headerlink" title="实现代码："></a>实现代码：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">def swapPairs(head):</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    :type head: ListNode</div><div class="line">    :rtype: ListNode</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    prev = ListNode(-1)</div><div class="line">    prev.next = head</div><div class="line">    temp = prev</div><div class="line">    while temp.next and temp.next.next:</div><div class="line">        node1 = temp.next</div><div class="line">        node2 = temp.next.next</div><div class="line">        </div><div class="line">        temp.next = node2</div><div class="line">        node1.next = node2.next</div><div class="line">        node2.next = node1</div><div class="line">        </div><div class="line">        temp = node1</div><div class="line">    return prev.next</div></pre></td></tr></table></figure>
+<h4 id="Linked-List-Cycle"><a href="#Linked-List-Cycle" class="headerlink" title="Linked List Cycle"></a>Linked List Cycle</h4><h5 id="问题描述：-8"><a href="#问题描述：-8" class="headerlink" title="问题描述："></a>问题描述：</h5><blockquote>
+<p>Given a linked list, determine if it has a cycle in it.<br>Follow up: Can you solve it without using extra space?</p>
+</blockquote>
+<h5 id="解题思路：-8"><a href="#解题思路：-8" class="headerlink" title="解题思路："></a>解题思路：</h5><blockquote>
+<p>链表中常见的判断是否存在环的存在。</p>
+<ol>
+<li>设置一个hash表，判断节点是否被访问过，如果被访问过，则设置True，如果遇到已经访问过的节点，则说明存在环。时间复杂度O(n)，空间复杂度O(n)</li>
+<li>设置一前一后两个指针，如果两个指针相遇，则说明存在指针。时间复杂度O(n)，空间复杂度O(1)。</li>
+</ol>
+</blockquote>
+<h5 id="实现代码：-8"><a href="#实现代码：-8" class="headerlink" title="实现代码："></a>实现代码：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">#实现1：使用hash表存储是否访问过</div><div class="line">def hasCycle(head):</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    :type head: ListNode</div><div class="line">    :rtype: bool</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    d = &#123;&#125;</div><div class="line">    while head:</div><div class="line">        if head not in d:</div><div class="line">            d[head] = True</div><div class="line">        else:</div><div class="line">            return True</div><div class="line">        </div><div class="line">        head = head.next</div><div class="line">    else:</div><div class="line">        return False</div><div class="line"></div><div class="line">#实现2：使用速度一快一慢两个指针，判断是否相遇</div><div class="line">def has_cycle(head):</div><div class="line">    slow = fast = head</div><div class="line">    while fast and fast.next:</div><div class="line">        print(&apos;in&apos;)</div><div class="line">        slow = slow.next</div><div class="line">        fast = fast.next.next</div><div class="line">        if slow == fast:</div><div class="line">            return True</div><div class="line">    return False</div></pre></td></tr></table></figure>
+<h4 id="Palindrome-Linked-List"><a href="#Palindrome-Linked-List" class="headerlink" title="Palindrome Linked List"></a>Palindrome Linked List</h4><h5 id="问题描述：-9"><a href="#问题描述：-9" class="headerlink" title="问题描述："></a>问题描述：</h5><blockquote>
+<p>Given a singly linked list, determine if it is a palindrome.</p>
+<p>Follow up:<br>Could you do it in O(n) time and O(1) space?</p>
+</blockquote>
+<h5 id="解题思路：-9"><a href="#解题思路：-9" class="headerlink" title="解题思路："></a>解题思路：</h5><blockquote>
+<ol>
+<li>首先想到的是：新建一个列表，将所有链表中的元素存储到列表中，然后判断列表中的数字是否满足回文特征。时间复杂度O(n)，空间复杂度为O(n)。</li>
+<li>题目要求的空间复杂度为O(1)，因此不能开辟新的空间。可以使用一快一慢两个指针找到链表的中点，然后将链表的后半段逆转，然后对比前后两半段是否相等。</li>
+</ol>
+</blockquote>
+<h5 id="实现代码：-9"><a href="#实现代码：-9" class="headerlink" title="实现代码："></a>实现代码：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">#方法1：开辟列表，通过列表判断是否回文。</div><div class="line">def isPalindrome(self, head):</div><div class="line">    lst = []</div><div class="line">    while head:</div><div class="line">        lst.append(head.val)</div><div class="line">        head = head.next</div><div class="line">        </div><div class="line">    for i in range(len(lst)/2):</div><div class="line">        if lst[i] != lst[-i-1]:</div><div class="line">            return False</div><div class="line">        </div><div class="line">    return True</div><div class="line"></div><div class="line">#方法2：逆转后半段指针，然后比对前后半段指针</div><div class="line">def isPalindrome(self, head):</div><div class="line">    if head is None:</div><div class="line">        return True</div><div class="line">    #find mid node</div><div class="line">    fast = slow = head</div><div class="line">    while fast.next and fast.next.next:</div><div class="line">        slow = slow.next</div><div class="line">        fast = fast.next.next</div><div class="line">        </div><div class="line">    #reverse second half</div><div class="line">    p, last = slow.next, None</div><div class="line">    while p:</div><div class="line">        next = p.next</div><div class="line">        p.next = last</div><div class="line">        last, p = p, next</div><div class="line">        </div><div class="line">    #check palindrome</div><div class="line">    p1, p2 = last, head</div><div class="line">    while p1 and p1.val == p2.val:</div><div class="line">        p1, p2 = p1.next, p2.next</div><div class="line">        </div><div class="line">    #resume linked list(optional)</div><div class="line">    p, last = last, None</div><div class="line">    while p:</div><div class="line">        next = p.next</div><div class="line">        p.next = last</div><div class="line">        last, p = p, next</div><div class="line">    slow.next = last</div><div class="line">    return p1 is None</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/12/20/算法实例-列表/" itemprop="url">
                   leetcode算法实例 - 列表
                 </a>
@@ -2068,7 +2275,7 @@ Consumer（消耗方）：任何从Kafka读取话题的组件可叫做消耗方�
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
