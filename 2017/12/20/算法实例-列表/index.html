@@ -1,0 +1,1142 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Courier New:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="leetcode,算法,python," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Zhangxinhe's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="1. 移除列表中的重复数据问题描述： Remove Dumplicates from Sorted Array“””Description：Given a sorted array, remove the duplicates in place such that each element appear only once and returnthe new length.Do not alloc">
+<meta name="keywords" content="leetcode,算法,python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="leetcode算法实例 - 列表">
+<meta property="og:url" content="https://michaelzxh.github.io/2017/12/20/算法实例-列表/index.html">
+<meta property="og:site_name" content="Zhangxinhe&#39;s Blog">
+<meta property="og:description" content="1. 移除列表中的重复数据问题描述： Remove Dumplicates from Sorted Array“””Description：Given a sorted array, remove the duplicates in place such that each element appear only once and returnthe new length.Do not alloc">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://michaelzxh.github.io/2017/12/20/算法实例-列表/1513237259364.png">
+<meta property="og:updated_time" content="2017-12-20T05:58:02.892Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="leetcode算法实例 - 列表">
+<meta name="twitter:description" content="1. 移除列表中的重复数据问题描述： Remove Dumplicates from Sorted Array“””Description：Given a sorted array, remove the duplicates in place such that each element appear only once and returnthe new length.Do not alloc">
+<meta name="twitter:image" content="https://michaelzxh.github.io/2017/12/20/算法实例-列表/1513237259364.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: undefined,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://michaelzxh.github.io/2017/12/20/算法实例-列表/"/>
+
+
+<!-- 网页加载条 -->
+<script src="/js/src/pace.min.js"></script>
+  <title> leetcode算法实例 - 列表 | Zhangxinhe's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Zhangxinhe's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Do The Best U Can!</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-commenting"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+
+      <!-- 自定义High一下的功能 -->
+      <li class="menu-item"> <a title="把这个链接拖到你的工具栏中,任何网页都可以High" href='javascript:(
+    /*
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *      http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+    function go() {
+
+
+    var songs = [
+                "http://bdyun.65dj.com:8090/2015/06/28/84791C997D8C55023DAD0D5690E48C28/%D1%A6%D6%AE%C7%AB%20-%20%D1%DD%D4%B1.mp3",
+                "http://7xoiki.com1.z0.glb.clouddn.com/Music-sunburst.mp3",
+                ""
+    ];
+
+    
+    function c() {
+        var e = document.createElement("link");
+        e.setAttribute("type", "text/css");
+        e.setAttribute("rel", "stylesheet");
+        e.setAttribute("href", f);
+        e.setAttribute("class", l);
+        document.body.appendChild(e)
+    }
+ 
+    function h() {
+        var e = document.getElementsByClassName(l);
+        for (var t = 0; t < e.length; t++) {
+            document.body.removeChild(e[t])
+        }
+    }
+ 
+    function p() {
+        var e = document.createElement("div");
+        e.setAttribute("class", a);
+        document.body.appendChild(e);
+        setTimeout(function() {
+            document.body.removeChild(e)
+        }, 100)
+    }
+ 
+    function d(e) {
+        return {
+            height : e.offsetHeight,
+            width : e.offsetWidth
+        }
+    }
+ 
+    function v(i) {
+        var s = d(i);
+        return s.height > e && s.height < n && s.width > t && s.width < r
+    }
+ 
+    function m(e) {
+        var t = e;
+        var n = 0;
+        while (!!t) {
+            n += t.offsetTop;
+            t = t.offsetParent
+        }
+        return n
+    }
+ 
+    function g() {
+        var e = document.documentElement;
+        if (!!window.innerWidth) {
+            return window.innerHeight
+        } else if (e && !isNaN(e.clientHeight)) {
+            return e.clientHeight
+        }
+        return 0
+    }
+ 
+    function y() {
+        if (window.pageYOffset) {
+            return window.pageYOffset
+        }
+        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+    }
+ 
+    function E(e) {
+        var t = m(e);
+        return t >= w && t <= b + w
+    }
+
+    function S() {
+        var e = document.getElementById("audio_element_id");
+        if(e != null){
+            var index = parseInt(e.getAttribute("curSongIndex"));
+            if(index > songs.length - 2) {
+                index = 0;
+            } else {
+                index++;
+            }
+            e.setAttribute("curSongIndex", index);
+            N();
+        }
+
+        e.src = i;
+        e.play()
+    }
+ 
+    function x(e) {
+        e.className += " " + s + " " + o
+    }
+ 
+    function T(e) {
+        e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+    }
+ 
+    function N() {
+        var e = document.getElementsByClassName(s);
+        var t = new RegExp("\\b" + s + "\\b");
+        for (var n = 0; n < e.length; ) {
+            e[n].className = e[n].className.replace(t, "")
+        }
+    }
+
+    function initAudioEle() {
+        var e = document.getElementById("audio_element_id");
+        if(e === null){
+            e = document.createElement("audio");
+            e.setAttribute("class", l);
+            e.setAttribute("curSongIndex", 0);
+            e.id = "audio_element_id";
+            e.loop = false;
+            e.bgcolor = 0;
+            e.addEventListener("canplay", function() {
+            setTimeout(function() {
+                x(k)
+            }, 500);
+            setTimeout(function() {
+                N();
+                p();
+                for (var e = 0; e < O.length; e++) {
+                    T(O[e])
+                }
+            }, 15500)
+        }, true);
+        e.addEventListener("ended", function() {
+            N();
+            h();
+            go();
+        }, true);
+        e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+        document.body.appendChild(e);
+        }
+    }
+    
+    initAudioEle();
+    var e = 30;
+    var t = 30;
+    var n = 350;
+    var r = 350;
+
+    var curSongIndex = parseInt(document.getElementById("audio_element_id").getAttribute("curSongIndex"));
+    var i = songs[curSongIndex];
+    
+    var s = "mw-harlem_shake_me";
+    var o = "im_first";
+    var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+    var a = "mw-strobe_light";
+
+    /* harlem-shake-style.css，替换成你的位置，也可以直接使用：//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css */
+    var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+    
+    var l = "mw_added_css";
+    var b = g();
+    var w = y();
+    var C = document.getElementsByTagName("*");
+    var k = null;
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            if (E(A)) {
+                k = A;
+                break
+            }
+        }
+    }
+    if (A === null) {
+        console.warn("Could not find a node of the right size. Please try a different page.");
+        return
+    }
+    c();
+    S();
+    var O = [];
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            O.push(A)
+        }
+    }
+    })()'><i class="menu-item-icon fa fa-music fa-fw"></i>High一下</a> </li>
+      <!-- end High一下 -->
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                leetcode算法实例 - 列表
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-12-20T13:54:57+08:00" content="2017-12-20">
+              2017-12-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv">热度
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>℃
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="1-移除列表中的重复数据"><a href="#1-移除列表中的重复数据" class="headerlink" title="1. 移除列表中的重复数据"></a>1. 移除列表中的重复数据</h4><h5 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h5><blockquote>
+<p>Remove Dumplicates from Sorted Array<br>“””<br>Description：<br>Given a sorted array, remove the duplicates in place such that each element appear only once and return<br>the new length.<br>Do not allocate extra space for another array, you must do this in place with constant memory.<br>For example, Given input array A = [1,1,2] ,<br>Your function should return length = 2, and A is now [1,2]<br>“””</p>
+</blockquote>
+<h5 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">def remove_dumplicates(A):</div><div class="line">    repeat_num = 0</div><div class="line">    last_num = A[-1]</div><div class="line">    current_repeat = 0</div><div class="line">    i = len(A) - 2</div><div class="line">    while i &gt;= 0:</div><div class="line">        while A[i] == last_num:</div><div class="line">            current_repeat += 1</div><div class="line">            i -= 1</div><div class="line"></div><div class="line">        if current_repeat:</div><div class="line">            repeat_num += current_repeat</div><div class="line">            for j in range(i+1,len(A)-current_repeat):</div><div class="line">                A[j] = A[j+current_repeat]</div><div class="line"></div><div class="line">        current_repeat = 0</div><div class="line">        last_num = A[i]</div><div class="line">        i -= 1</div><div class="line"></div><div class="line">    return A[:len(A) - repeat_num]</div><div class="line"></div><div class="line"># 优化版本</div><div class="line">def remove_dumplicates_v2(A):</div><div class="line">    index = 1</div><div class="line">    for i in range(1, len(A)):</div><div class="line">        if A[i] != A[index - 1]:</div><div class="line">            A[index] = A[i]</div><div class="line">            index += 1</div><div class="line"></div><div class="line">    return A[:index]</div></pre></td></tr></table></figure>
+<h4 id="寻找最长连续数组"><a href="#寻找最长连续数组" class="headerlink" title="寻找最长连续数组"></a>寻找最长连续数组</h4><h5 id="问题描述：-1"><a href="#问题描述：-1" class="headerlink" title="问题描述："></a>问题描述：</h5><blockquote>
+<p>Given an unsorted array of integers, find the length of the longest consecutive elements sequence.<br>For example, Given [100, 4, 200, 1, 3, 2] , The longest consecutive elements sequence is [1, 2,<br>3, 4] . Return its length: 4.<br>Your algorithm should run in O(n) complexity.</p>
+</blockquote>
+<h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><blockquote>
+<p>如果允许O(n log n)的复杂度，那么可以先排序，可是本题要求 O(n) 。<br>由于序列里的元素是无序的，又要求 O(n) ，首先要想到用哈希表。<br>用一个哈希表存储所有出现过的元素，对每个元素，以该元素为中心，往左右扩张，直到不连续为止，记<br>录下最长的长度。</p>
+</blockquote>
+<h5 id="代码实现："><a href="#代码实现：" class="headerlink" title="代码实现："></a>代码实现：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">def get_longest_cs(A):</div><div class="line">    hash_map = &#123;i:False for i in A&#125;</div><div class="line">    max_len = 0</div><div class="line">    for item in hash_map:</div><div class="line">        if not hash_map[item]:</div><div class="line">            length = 0</div><div class="line">            v = item + 1</div><div class="line">            while v in hash_map:</div><div class="line">                hash_map[v] = True</div><div class="line">                v += 1</div><div class="line">                length += 1</div><div class="line"></div><div class="line">            v = item - 1</div><div class="line">            while v in hash_map:</div><div class="line">                hash_map[v] = True</div><div class="line">                v -= 1</div><div class="line">                length += 1</div><div class="line"></div><div class="line">            if length &gt; max_len:</div><div class="line">                max_len = length + 1</div><div class="line"></div><div class="line">    return max_len</div></pre></td></tr></table></figure>
+<h4 id="Two-Sum"><a href="#Two-Sum" class="headerlink" title="Two Sum"></a>Two Sum</h4><h5 id="问题描述：-2"><a href="#问题描述：-2" class="headerlink" title="问题描述："></a>问题描述：</h5><blockquote>
+<p>Given an array of integers, find two numbers such that they add up to a specific target number.<br>The function twoSum should return indices of the two numbers such that they add up to the target, where<br>index1 must be less than index2. Please note that your returned answers (both index1 and index2) are<br>not zero-based.<br>You may assume that each input would have exactly one solution.<br>Input: numbers={2, 7, 11, 15}, target=9<br>Output: index1=1, index2=2</p>
+</blockquote>
+<h5 id="解题思路：-1"><a href="#解题思路：-1" class="headerlink" title="解题思路："></a>解题思路：</h5><blockquote>
+<ul>
+<li>方法1：暴力，复杂度O(n )，会超时</li>
+<li>方法2：hash。用一个哈希表，存储每个数对应的下标，复杂度 O(n) .</li>
+<li>方法3：先排序，然后左右夹逼，排序O(n log n)，左右夹逼 O(n) ，最终O(n log n)。但是注意，这题需要<br>返回的是下标，而不是数字本身，因此这个方法行不通。</li>
+</ul>
+</blockquote>
+<h5 id="实现代码："><a href="#实现代码：" class="headerlink" title="实现代码："></a>实现代码：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">def two_sum(A,target):</div><div class="line">        dict = &#123;&#125;</div><div class="line">        for i in range(len(nums)):</div><div class="line">            x = nums[i]</div><div class="line">            if target - x in dict:</div><div class="line">                return (dict[target - x], i)</div><div class="line">            dict[x] = i</div></pre></td></tr></table></figure>
+<h4 id="3SUM"><a href="#3SUM" class="headerlink" title="3SUM"></a>3SUM</h4><h5 id="问题描述：-3"><a href="#问题描述：-3" class="headerlink" title="问题描述："></a>问题描述：</h5><blockquote>
+<p>Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0 ?<br>Find all unique triplets in the array which gives the sum of zero.<br>Note:<br>Elements in a triplet (a,b,c) must be in non-descending order. (ie, a ≤ b ≤ c)<br>The solution set must not contain duplicate triplets.<br>For example, given array S = {-1 0 1 2 -1 -4} .<br>A solution set is:<br>(-1, 0, 1)<br>(-1, -1, 2)</p>
+</blockquote>
+<h5 id="解题思路：-2"><a href="#解题思路：-2" class="headerlink" title="解题思路："></a>解题思路：</h5><p>思路一：</p>
+<blockquote>
+<ol>
+<li>先将数组排序；</li>
+<li>排序后，可以按照TwoSum的思路来解题，可以将num[i]的相反数-num[i]作为target，然后从i + 1到 len(num) - 1的数组元素中寻找两个数使他们的和为-num[i]就可以了。下标i的范围从0到len(num) -3.</li>
+<li>这个过程中要注意去重</li>
+<li>时间复杂度为$O(n^2)$</li>
+</ol>
+</blockquote>
+<p>思路二：</p>
+<blockquote>
+<p>求一个列表中所有和为零的二元组的一种思路是先把列表排序，再用两个指针从两头向中间移动。如果前后两个数的和小于0，则左指针右移；如果和大于0，则右指针左移。求三元组时可以参考这种做法，第一个数a确定后，可以理解为求列表中和为-a的二元组。由于不要考虑重复的元组，遇到重复的数可以直接跳过。</p>
+</blockquote>
+<h5 id="代码实现：-1"><a href="#代码实现：-1" class="headerlink" title="代码实现："></a>代码实现：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">result = []</div><div class="line">    i = 0</div><div class="line">    A.sort()</div><div class="line">    while i &lt; len(A) - 2:</div><div class="line">        j = i + 1</div><div class="line">        k = len(A) - 1</div><div class="line">        while j &lt; k:</div><div class="line">            lst = [A[i],A[j],A[k]]</div><div class="line">            s = sum(lst)</div><div class="line">            if s == 0:</div><div class="line">                #ignore repeat num</div><div class="line">                result.append(lst)</div><div class="line">                j += 1</div><div class="line">                k -= 1</div><div class="line"></div><div class="line">                while j &lt; k and A[j] == A[j-1]:</div><div class="line">                    j += 1</div><div class="line">                while A[k] == A[k+1]:</div><div class="line">                    k -= 1</div><div class="line">            elif s &gt; 0:</div><div class="line">                k -= 1</div><div class="line">            else:</div><div class="line">                j += 1</div><div class="line"></div><div class="line">        i += 1</div><div class="line">        while i &lt; len(A) - 2 and A[i] == A[i-1]:</div><div class="line">            i += 1</div><div class="line">    return result</div></pre></td></tr></table></figure>
+<h4 id="Three-Sum-Closet"><a href="#Three-Sum-Closet" class="headerlink" title="Three Sum Closet"></a>Three Sum Closet</h4><h5 id="问题描述：-4"><a href="#问题描述：-4" class="headerlink" title="问题描述："></a>问题描述：</h5><blockquote>
+<p>Given an array S of n integers, find three integers in S such that the sum is closest to a given number, target. Return the sum of the three integers. You may assume that each input would have exactly one solution.</p>
+<p>For example, given array S = {-1 2 1 -4}, and target = 1.</p>
+<p>The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).</p>
+</blockquote>
+<h5 id="解题思路：-3"><a href="#解题思路：-3" class="headerlink" title="解题思路："></a>解题思路：</h5><blockquote>
+<p>先对数组进行排序，然后从0开始遍历，左右夹逼。</p>
+</blockquote>
+<h5 id="实现代码：-1"><a href="#实现代码：-1" class="headerlink" title="实现代码："></a>实现代码：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">def three_sum_closet(A,target):</div><div class="line">    A.sort()</div><div class="line">    i = 0</div><div class="line">    min_gap = None</div><div class="line">    result = None</div><div class="line">    while i &lt; len(A)-1:</div><div class="line">        j = i + 1</div><div class="line">        k = len(A) - 1</div><div class="line">        while j &lt; k:</div><div class="line">            print(i,j,k)</div><div class="line">            lst = [A[i],A[j],A[k]]</div><div class="line">            s = sum(lst)</div><div class="line"></div><div class="line">            gap = abs(target - s)</div><div class="line">            if min_gap is None or gap &lt; min_gap:</div><div class="line">                min_gap = gap</div><div class="line">                result = s</div><div class="line"></div><div class="line">            if s &gt; target:</div><div class="line">                k -= 1</div><div class="line">            else:</div><div class="line">                j += 1</div><div class="line"></div><div class="line">        i += 1</div><div class="line"></div><div class="line">    return result</div></pre></td></tr></table></figure>
+<h4 id="Next-Permutation"><a href="#Next-Permutation" class="headerlink" title="Next Permutation"></a>Next Permutation</h4><h5 id="问题描述：-5"><a href="#问题描述：-5" class="headerlink" title="问题描述："></a>问题描述：</h5><blockquote>
+<p>找出一个数组按字典序排列的后一种排列。</p>
+<p>注意点：</p>
+<ul>
+<li>如果原来就是字典序排列中最大的，将其重新排列为字典序最小的排列</li>
+<li>不要申请额外的间</li>
+<li>小心数组越界问题</li>
+<li>函数没有返回值，直接修改列表</li>
+</ul>
+<p>例子：</p>
+<ul>
+<li>输入: [1,2,3] 输出: [1,3,2]</li>
+<li>输入: [3,2,1] 输出: [1,2,3]</li>
+</ul>
+</blockquote>
+<h4 id="解题思路：-4"><a href="#解题思路：-4" class="headerlink" title="解题思路："></a>解题思路：</h4><blockquote>
+<p>通过一个例子来说明，原数组为[1,7,3,4,1]。我们想要找到比173421大一点的数，那就要优先考虑将后面的数字变换顺序，而421从后往前是升序的（也就是这三个数字能组成的最大的数），变换了反而会变小，所以要先找到降序的点。可以看出3是第一个降序的点，要想整个数变大，3就要变大，从后往前找到第一个比3大的数4，将3和4交换位置得到174321，既然原来3所在位置的数字变大了，那整个数肯定变大了，而它之后的数是最大的（从后往前是升序的），应转换成最小的，直接翻转。</p>
+</blockquote>
+<p><img src="./1513237259364.png" alt="Alt text"></p>
+<h4 id="代码实现：-2"><a href="#代码实现：-2" class="headerlink" title="代码实现："></a>代码实现：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">def nextPermutation(nums):</div><div class="line">        &quot;&quot;&quot;</div><div class="line">        :type nums: List[int]</div><div class="line">        :rtype: void Do not return anything, modify nums in-place instead.</div><div class="line">        &quot;&quot;&quot;</div><div class="line">        def reverse_lst(lst, start, end):</div><div class="line">            if end &lt;= start:</div><div class="line">                return</div><div class="line">            for i in range(end - start):</div><div class="line">                if start + i &lt;= end - i:</div><div class="line">                    lst[start + i], lst[end - i] = lst[end - i], lst[start + i]</div><div class="line">                    </div><div class="line">        descend_trend_index = -1</div><div class="line">        swap_index = -1</div><div class="line">        for i in range(len(nums)-1,0,-1):</div><div class="line">            if nums[i - 1] &lt; nums[i]:</div><div class="line">                descend_trend_index = i - 1</div><div class="line">                for j in range(len(nums)-1,i-1,-1):</div><div class="line">                    if nums[j] &gt; nums[descend_trend_index]:</div><div class="line">                        swap_index = j</div><div class="line">                        break</div><div class="line"></div><div class="line">                nums[descend_trend_index],nums[swap_index] = nums[swap_index],nums[descend_trend_index]</div><div class="line">                reverse_lst(nums,descend_trend_index+1,len(nums)-1)</div><div class="line">                return</div><div class="line"></div><div class="line">        if descend_trend_index == -1:</div><div class="line">            reverse_lst(nums,0,len(nums)-1)</div></pre></td></tr></table></figure>
+<h4 id="Valid-Sudoku"><a href="#Valid-Sudoku" class="headerlink" title="Valid Sudoku"></a>Valid Sudoku</h4><h5 id="问题描述：-6"><a href="#问题描述：-6" class="headerlink" title="问题描述："></a>问题描述：</h5><blockquote>
+<p>Determine if a Sudoku is valid, according to: Sudoku Puzzles - The Rules<br><a href="http://sudoku.com.au/TheRules.aspx" target="_blank" rel="external">http://sudoku.com.au/TheRules.aspx</a> .<br>The Sudoku board could be partially filled, where empty cells are filled with the character ‘.’ .</p>
+</blockquote>
+<h4 id="解题思路：-5"><a href="#解题思路：-5" class="headerlink" title="解题思路："></a>解题思路：</h4><blockquote>
+<ol>
+<li>最直观的思路，三个规则全部检查一遍。</li>
+<li></li>
+</ol>
+</blockquote>
+<h4 id="Trapping-Rain-Water"><a href="#Trapping-Rain-Water" class="headerlink" title="Trapping Rain Water"></a>Trapping Rain Water</h4><h5 id="问题描述：-7"><a href="#问题描述：-7" class="headerlink" title="问题描述："></a>问题描述：</h5><blockquote>
+<p>Given n non-negative integers representing an elevation map where the width of each bar is 1,<br>compute how much water it is able to trap after raining.<br>For example, Given [0,1,0,2,1,0,1,3,2,1,2,1] , return 6.</p>
+</blockquote>
+<h5 id="解题思路：-6"><a href="#解题思路：-6" class="headerlink" title="解题思路："></a>解题思路：</h5><blockquote>
+<ol>
+<li>首先从左向右遍历一遍，获取每一个位置上的左边最大值列表 max_left_array.</li>
+<li>然后从右向左遍历一遍，遍历的过程中记录下右边的最大值max_right, 遍历当前所在位置的容量为 min(max_right, max_left_arrat[i]) - height，如果相减的结果小于0，则将结果置为0</li>
+<li>将每个位置上的所有结果相加，得到最终结果。</li>
+</ol>
+</blockquote>
+<h5 id="代码实现：-3"><a href="#代码实现：-3" class="headerlink" title="代码实现："></a>代码实现：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">def trap_rain(nums):</div><div class="line">    if not nums:</div><div class="line">        return 0</div><div class="line">    </div><div class="line">    result = 0</div><div class="line"></div><div class="line">    max_left_array = []</div><div class="line">    max_left_tmp = nums[0]</div><div class="line">    max_left_array.append(max_left_tmp)</div><div class="line"></div><div class="line">    for i in range(1,len(nums)):</div><div class="line">        if  nums[i] &gt; max_left_tmp:</div><div class="line">            max_left_tmp = nums[i]</div><div class="line">        max_left_array.append(max_left_tmp)</div><div class="line"></div><div class="line">    max_right = nums[-1]</div><div class="line">    for i in range(len(nums)-2,-1,-1):</div><div class="line">        cur_trap_rain = min([max_left_array[i],max_right]) - nums[i]</div><div class="line">        result += cur_trap_rain if cur_trap_rain &gt; 0 else 0</div><div class="line">        if nums[i] &gt; max_right:</div><div class="line">            max_right = nums[i]</div><div class="line"></div><div class="line">    return result</div></pre></td></tr></table></figure>
+<h4 id="Rotate-Image"><a href="#Rotate-Image" class="headerlink" title="Rotate Image"></a>Rotate Image</h4><h5 id="问题描述：-8"><a href="#问题描述：-8" class="headerlink" title="问题描述："></a>问题描述：</h5><blockquote>
+<p>You are given an n × n 2D matrix representing an image.<br>Rotate the image by 90 degrees (clockwise).<br>Follow up: Could you do this in-place?</p>
+</blockquote>
+<h5 id="解题思路：-7"><a href="#解题思路：-7" class="headerlink" title="解题思路："></a>解题思路：</h5><blockquote>
+<p>先沿着对角边对折一次，然后沿着中线对折一次。</p>
+</blockquote>
+<h5 id="代码实现：-4"><a href="#代码实现：-4" class="headerlink" title="代码实现："></a>代码实现：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">def rotete_image(matrix):</div><div class="line">    m_len = len(matrix)</div><div class="line">    for i in range(m_len - 1):</div><div class="line">        for j in range(m_len - i - 1):</div><div class="line">            matrix[i][j], matrix[m_len - j - 1][m_len - i - 1] = \</div><div class="line">                matrix[m_len - j - 1][m_len - i - 1], matrix[i][j]</div><div class="line"></div><div class="line">    for i in range(m_len / 2):</div><div class="line">        for j in range(m_len):</div><div class="line">            matrix[i][j], matrix[m_len - i - 1][j] = matrix[m_len - i - 1][j], matrix[i][j]</div></pre></td></tr></table></figure>
+<h4 id="Plus-One"><a href="#Plus-One" class="headerlink" title="Plus One"></a>Plus One</h4><h5 id="问题描述：-9"><a href="#问题描述：-9" class="headerlink" title="问题描述："></a>问题描述：</h5><blockquote>
+<p>Given a non-negative integer represented as a non-empty array of digits, plus one to the integer.<br>You may assume the integer do not contain any leading zero, except the number 0 itself.<br>The digits are stored such that the most significant digit is at the head of the list.</p>
+</blockquote>
+<h5 id="解题思路：-8"><a href="#解题思路：-8" class="headerlink" title="解题思路："></a>解题思路：</h5><blockquote>
+<p>从右向左遍历，每位加1，如果和为10，则向前进1，如果没有进位，则终止遍历，得到最终结果。需要考虑边界条件，如99加1的情况。</p>
+</blockquote>
+<h5 id="代码实现：-5"><a href="#代码实现：-5" class="headerlink" title="代码实现："></a>代码实现：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">def plus_one(nums):</div><div class="line">    plus = 1</div><div class="line">    for i in range(len(nums)-1,-1,-1):</div><div class="line">        result = nums[i] + plus</div><div class="line">        if result == 10:</div><div class="line">            plus = 1</div><div class="line">            nums[i] = 0</div><div class="line">        else:</div><div class="line">            plus = 0</div><div class="line">            nums[i] = result</div><div class="line">            break</div><div class="line"></div><div class="line">    if plus == 1:</div><div class="line">        nums.insert(0,1)</div></pre></td></tr></table></figure>
+<h4 id="Climbing-Stairs"><a href="#Climbing-Stairs" class="headerlink" title="Climbing Stairs"></a>Climbing Stairs</h4><h5 id="问题描述：-10"><a href="#问题描述：-10" class="headerlink" title="问题描述："></a>问题描述：</h5><blockquote>
+<p>You are climbing a stair case. It takes n steps to reach to the top.<br>Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?</p>
+</blockquote>
+<h5 id="解题思路：-9"><a href="#解题思路：-9" class="headerlink" title="解题思路："></a>解题思路：</h5><blockquote>
+<p>设 f(n) 表示爬 n 阶楼梯的不同方法数，为了爬到第 n 阶楼梯，有两个选择：</p>
+<ul>
+<li>从第 n-1 阶前进1步；</li>
+<li>从第 n-1 阶前进2步；</li>
+</ul>
+<p>因此，有 f(n)=f(n-1)+f(n-2) 。<br>这是一个斐波那契数列</p>
+</blockquote>
+<h5 id="代码实现：-6"><a href="#代码实现：-6" class="headerlink" title="代码实现："></a>代码实现：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">if n in (1,2):</div><div class="line">    return n</div><div class="line"></div><div class="line">result = 0</div><div class="line">cur = 1</div><div class="line">next = 2</div><div class="line">for i in range(2,n):</div><div class="line">    result = cur + next</div><div class="line">    cur = next</div><div class="line">    next = result</div><div class="line"></div><div class="line">return result</div></pre></td></tr></table></figure>
+<h4 id="Set-Matrix-Zeroes"><a href="#Set-Matrix-Zeroes" class="headerlink" title="Set Matrix Zeroes"></a>Set Matrix Zeroes</h4><h5 id="问题描述：-11"><a href="#问题描述：-11" class="headerlink" title="问题描述："></a>问题描述：</h5><blockquote>
+<p>Given a m × n matrix, if an element is 0, set its entire row and column to 0. Do it in place.<br>Follow up: Did you use extra space?<br>A straight forward solution using O(mn) space is probably a bad idea.<br>A simple improvement uses O(m + n) space, but still not the best solution.<br>Could you devise a constant space solution?</p>
+</blockquote>
+<h5 id="解题思路：-10"><a href="#解题思路：-10" class="headerlink" title="解题思路："></a>解题思路：</h5><blockquote>
+<p>先遍历整个矩阵，找到所有值为0的矩阵坐标信息列表。然后遍历整个坐标列表，将坐标对应的行、列的所有值设置为0.</p>
+</blockquote>
+<h5 id="代码实现：-7"><a href="#代码实现：-7" class="headerlink" title="代码实现："></a>代码实现：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">def set_matrix_zero(matrix):</div><div class="line">    if not matrix:</div><div class="line">        return</div><div class="line"></div><div class="line">    m = len(matrix)</div><div class="line">    n = len(matrix[0])</div><div class="line">    pos_lst = []</div><div class="line"></div><div class="line">    for i in range(m):</div><div class="line">        for j in range(n):</div><div class="line">            if matrix[i][j] == 0:</div><div class="line">                pos_lst.append((i,j))</div><div class="line"></div><div class="line">    for pos in pos_lst:</div><div class="line">        i,j = pos</div><div class="line">        for k in range(n):</div><div class="line">            matrix[i][k] = 0</div><div class="line">        for k in range(m):</div><div class="line">            matrix[k][j] = 0</div></pre></td></tr></table></figure>
+<h4 id="Gas-Station"><a href="#Gas-Station" class="headerlink" title="Gas Station"></a>Gas Station</h4><h5 id="问题描述：-12"><a href="#问题描述：-12" class="headerlink" title="问题描述："></a>问题描述：</h5><blockquote>
+<p>There are N gas stations along a circular route, where the amount of gas at station i is gas[i] .<br>You have a car with an unlimited gas tank and it costs cost[i] of gas to travel from station i to its<br>next station ( i+1 ). You begin the journey with an empty tank at one of the gas stations.<br>Return the starting gas station’s index if you can travel around the circuit once, otherwise return -1.<br>Note: The solution is guaranteed to be unique.</p>
+</blockquote>
+<h5 id="解题思路：-11"><a href="#解题思路：-11" class="headerlink" title="解题思路："></a>解题思路：</h5><blockquote>
+<p>如果sum(gas)&lt;sum(cost)的话，那么一定无解。diff是走完一站邮箱剩下的油，如果加上gas[i]也到不了下一站，那么继续将下一站设置为起点，然后再检查，是不是很巧妙呢？</p>
+</blockquote>
+<h5 id="代码实现：-8"><a href="#代码实现：-8" class="headerlink" title="代码实现："></a>代码实现：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">def gas_station(gas,cost):</div><div class="line">    if sum(gas) &lt; sum(cost):</div><div class="line">        return -1</div><div class="line"></div><div class="line">    index = 0</div><div class="line">    s = 0</div><div class="line">    for i in range(len(gas)):</div><div class="line">        s += gas[i] - cost[i]</div><div class="line">        if s &lt; 0:</div><div class="line">            index = i + 1</div><div class="line">            s = 0</div><div class="line"></div><div class="line">    return index if index &lt; len(gas) else -1</div></pre></td></tr></table></figure>
+<p>#### </p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+<blockquote class="blockquote-center" style="color: #ccc;">
+    -------------本文结束 <i class="fa fa-apple"></i> 感谢您的阅读-------------
+</blockquote>
+
+  <span id="inline-green" style="border-radius:3px;">作者</span>：<a class="link-blue" href="https://github.com/Michaelzxh" target="_blank">zhangxinhe</a><br/>有问题请 <a class="link-blue" href="https://michaelzxh.github.io/guestbook" target="_blank">留言</a>。
+
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>满分是10分的话，这篇文章你给几分</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/reward/reward_wechat.png" alt="Michael.Zhang WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/leetcode/" rel="tag"><i class="fa fa-tag"></i> leetcode</a>
+          
+            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+          
+            <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/16/基于GitLab搭建Django项目的CI运行环境/" rel="next" title="基于GitLab搭建Django项目的CI运行环境">
+                <i class="fa fa-chevron-left"></i> 基于GitLab搭建Django项目的CI运行环境
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    <div id="gitmentContainer" style="margin-bottom: -19px;"></div>
+    <link rel="stylesheet" href="/css/gitment.css">
+    <script src="/js/src/gitment.browser.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: 'blog-guestbook',
+        owner: 'Michaelzxh',
+        repo: 'Michaelzxh.github.io',
+        oauth: {
+          client_id: 'bbd367cf498321402719',
+          client_secret: '5d6b890500a2acaf7705495eee9c5ad12ed1f3d2',
+        },
+      })
+      gitment.render('gitmentContainer')
+    </script>
+
+    
+  </div>
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/zhangxinhe.jpg"
+               alt="Michael.Zhang" />
+          <p class="site-author-name" itemprop="name">Michael.Zhang</p>
+          <p class="site-description motion-element" itemprop="description">Stay Hungry,Stay Foolish</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/MichaelZxh" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-移除列表中的重复数据"><span class="nav-number">1.</span> <span class="nav-text">1. 移除列表中的重复数据</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#问题描述："><span class="nav-number">1.1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#代码实现"><span class="nav-number">1.2.</span> <span class="nav-text">代码实现</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#寻找最长连续数组"><span class="nav-number">2.</span> <span class="nav-text">寻找最长连续数组</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#问题描述：-1"><span class="nav-number">2.1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解题思路："><span class="nav-number">2.2.</span> <span class="nav-text">解题思路：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#代码实现："><span class="nav-number">2.3.</span> <span class="nav-text">代码实现：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Two-Sum"><span class="nav-number">3.</span> <span class="nav-text">Two Sum</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#问题描述：-2"><span class="nav-number">3.1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解题思路：-1"><span class="nav-number">3.2.</span> <span class="nav-text">解题思路：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#实现代码："><span class="nav-number">3.3.</span> <span class="nav-text">实现代码：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3SUM"><span class="nav-number">4.</span> <span class="nav-text">3SUM</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#问题描述：-3"><span class="nav-number">4.1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解题思路：-2"><span class="nav-number">4.2.</span> <span class="nav-text">解题思路：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#代码实现：-1"><span class="nav-number">4.3.</span> <span class="nav-text">代码实现：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Three-Sum-Closet"><span class="nav-number">5.</span> <span class="nav-text">Three Sum Closet</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#问题描述：-4"><span class="nav-number">5.1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解题思路：-3"><span class="nav-number">5.2.</span> <span class="nav-text">解题思路：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#实现代码：-1"><span class="nav-number">5.3.</span> <span class="nav-text">实现代码：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Next-Permutation"><span class="nav-number">6.</span> <span class="nav-text">Next Permutation</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#问题描述：-5"><span class="nav-number">6.1.</span> <span class="nav-text">问题描述：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解题思路：-4"><span class="nav-number">7.</span> <span class="nav-text">解题思路：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码实现：-2"><span class="nav-number">8.</span> <span class="nav-text">代码实现：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Valid-Sudoku"><span class="nav-number">9.</span> <span class="nav-text">Valid Sudoku</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#问题描述：-6"><span class="nav-number">9.1.</span> <span class="nav-text">问题描述：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解题思路：-5"><span class="nav-number">10.</span> <span class="nav-text">解题思路：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Trapping-Rain-Water"><span class="nav-number">11.</span> <span class="nav-text">Trapping Rain Water</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#问题描述：-7"><span class="nav-number">11.1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解题思路：-6"><span class="nav-number">11.2.</span> <span class="nav-text">解题思路：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#代码实现：-3"><span class="nav-number">11.3.</span> <span class="nav-text">代码实现：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Rotate-Image"><span class="nav-number">12.</span> <span class="nav-text">Rotate Image</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#问题描述：-8"><span class="nav-number">12.1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解题思路：-7"><span class="nav-number">12.2.</span> <span class="nav-text">解题思路：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#代码实现：-4"><span class="nav-number">12.3.</span> <span class="nav-text">代码实现：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Plus-One"><span class="nav-number">13.</span> <span class="nav-text">Plus One</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#问题描述：-9"><span class="nav-number">13.1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解题思路：-8"><span class="nav-number">13.2.</span> <span class="nav-text">解题思路：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#代码实现：-5"><span class="nav-number">13.3.</span> <span class="nav-text">代码实现：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Climbing-Stairs"><span class="nav-number">14.</span> <span class="nav-text">Climbing Stairs</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#问题描述：-10"><span class="nav-number">14.1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解题思路：-9"><span class="nav-number">14.2.</span> <span class="nav-text">解题思路：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#代码实现：-6"><span class="nav-number">14.3.</span> <span class="nav-text">代码实现：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Set-Matrix-Zeroes"><span class="nav-number">15.</span> <span class="nav-text">Set Matrix Zeroes</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#问题描述：-11"><span class="nav-number">15.1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解题思路：-10"><span class="nav-number">15.2.</span> <span class="nav-text">解题思路：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#代码实现：-7"><span class="nav-number">15.3.</span> <span class="nav-text">代码实现：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Gas-Station"><span class="nav-number">16.</span> <span class="nav-text">Gas Station</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#问题描述：-12"><span class="nav-number">16.1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解题思路：-11"><span class="nav-number">16.2.</span> <span class="nav-text">解题思路：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#代码实现：-8"><span class="nav-number">16.3.</span> <span class="nav-text">代码实现：</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+      <!-- hack一个虚线出来 -->
+      <section style="border-top:1px dotted #ccc;height:10px;"></section>
+      <!-- weibo show -->
+      <!-- <iframe width="100%" height="120" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=120&fansRow=2&ptype=1&speed=0&skin=5&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=5346488237&verifier=d529ff3a&dpc=1"></iframe> -->
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">您是第<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>个小伙伴</span>
+  
+
+  
+    <span class="site-pv">本站总浏览<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Michael.Zhang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
+    NexT.Mist
+  </a>
+</div>
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count" style="color: #e90f92;">全站共  字</span>
+</div>
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+  <!-- 按需加载背景 -->
+  <!-- 按需加载背景 -->
+<!-- 识别手机或电脑的js开始 -->  
+<script type="text/javascript">   
+(function(){  
+var res = GetRequest();  
+var par = res['index'];  
+if(par!='gfan'){  
+  var ua=navigator.userAgent.toLowerCase();  
+  var contains=function (a, b){  
+      if(a.indexOf(b)!=-1){return true;}  
+  };   
+  if((contains(ua,"android") && contains(ua,"mobile"))||(contains(ua,"android") && contains(ua,"mozilla"))||(contains(ua,"android") && contains(ua,"opera"))||contains(ua,"ucweb7")||contains(ua,"iphone")){
+    return false;
+  } else {
+    $.getScript("/js/src/particle.js?v=5.0.1");
+  }
+}  
+})();  
+function GetRequest() {  
+var url = location.search;
+var theRequest = new Object();  
+if (url.indexOf("?") != -1) {  
+  var str = url.substr(1);  
+  strs = str.split("&");  
+  for(var i = 0; i < strs.length; i ++) {  
+    theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);  
+  }  
+}  
+return theRequest;  
+}  
+</script>  
+<!-- 识别手机或电脑的js结束 -->  
+  <!-- 页面点击小红心 -->
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js?v=5.0.1"></script>
+  <!-- 页面移动stars -->
+  <script type="text/javascript" src="/js/src/jquery-stars.js?v=5.0.1"></script>
+<script type="text/javascript">
+jQuery('body').jstars({
+	image_path: '/images',
+	image: 'candy-cane-stars.png',
+	style: 'white',
+	width: 34,
+	height: 34,
+	delay: 700,
+	frequency: 5
+});
+</script>
+  <script type="text/javascript">var OriginTitile=document.title,st;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="Zhangxinhe's blog",clearTimeout(st)):(document.title=":) "+OriginTitile,st=setTimeout(function(){document.title=OriginTitile},4e3))})</script>W
+</body>
+</html>
