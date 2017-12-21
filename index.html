@@ -479,6 +479,154 @@
             
               
                 
+                <a class="post-title-link" href="/2017/12/21/KMP算法介绍及Python实现/" itemprop="url">
+                  KMP算法介绍及Python实现
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-12-21T14:50:44+08:00" content="2017-12-21">
+              2017-12-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+<!-- 自定义，用于添加摘要图片，文章中不显示 -->
+        
+<!-- 自定义结束 -->
+        
+          
+            <h3 id="KMP算法"><a href="#KMP算法" class="headerlink" title="KMP算法"></a>KMP算法</h3><blockquote>
+<p>参考链接：<a href="http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html</a></p>
+</blockquote>
+<h4 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h4><p>假设我们面临一个这样的问题：一个文本串S，一个字符模式串P，现在要查找P在S中的位置，怎么查找？<br>第一种就是暴力求解法，逐个字符串进行匹配。<br>第二种就是KMP算法。</p>
+<h4 id="KMP定义"><a href="#KMP定义" class="headerlink" title="KMP定义"></a>KMP定义</h4><blockquote>
+<p>Knuth-Morris-Pratt 字符串查找算法，简称为 “KMP算法”，常用于在一个文本串S内查找一个模式串P 的出现位置，这个算法由Donald Knuth、Vaughan Pratt、James H. Morris三人于1977年联合发表，故取这3人的姓氏命名此算法。</p>
+<p>依次对字符串进行移位比较的过程中，设法利用已经知道的配对成功的信息，不要把搜索位置移回到已经比较过的位置，继续把它向后移，这样提高了效率。</p>
+</blockquote>
+<h4 id="算法过程"><a href="#算法过程" class="headerlink" title="算法过程"></a>算法过程</h4><h5 id="一、计算部分匹配表"><a href="#一、计算部分匹配表" class="headerlink" title="一、计算部分匹配表"></a>一、计算部分匹配表</h5><p>这里需要先理解两个概念：前缀和后缀。</p>
+<ul>
+<li>前缀：除了最后一个字符以外，一个字符串的全部头部组合。</li>
+<li>后缀：除了第一个字符以外，一个字符串的全部尾部组合。</li>
+</ul>
+<p>部分匹配值就是前缀和后缀的最长的共有元素的长度。以”ABCDABD”为例说明：</p>
+<blockquote>
+<ul>
+<li>“A”的前缀和后缀都是空集，共有元素的长度为0；</li>
+<li>“AB”的前缀为[A]，后缀为[B]，共有元素的长度为0；</li>
+<li>“ABC”的前缀为[A,AB]，后缀为[C,BC]，共有元素长度为0；</li>
+<li>“ABCD”的前缀为[A,AB,ABC]，后缀为[D,CD,BCD]，共有元素长度为0；</li>
+<li>“ABCDA”的前缀为[A,AB,ABC,ABCD]，后缀为[A,DA,CDA,BCDA]，共有元素为”A”，长度为1；</li>
+<li>“ABCDAB”的前缀为[A,AB,ABC,ABCD,ABCDA]，后缀为[BCDAB,CDAB,DAB,AB,B]，共有元素为”AB”，长度为2；</li>
+<li>“ABCDABD”的前缀为[A,AB,ABC,ABCD,ABCDA,ABCDAB]，后缀为[BCDABD,CDABD,DABD,ABD,BD,D]，共有元素的长度为0.</li>
+</ul>
+</blockquote>
+<h5 id="二、计算公式"><a href="#二、计算公式" class="headerlink" title="二、计算公式"></a>二、计算公式</h5><p>已经匹配了部分字符后，往后移动的位数为：</p>
+<blockquote>
+<p> <strong>移动位数 = 已匹配的字符数 - 对应的部分匹配值</strong></p>
+</blockquote>
+<p><img src="./images/1513660904062.png" alt="Alt text"></p>
+<p>上图中前面匹配了6个字符”ABCDAB”是匹配的，查表可知，最后一个匹配字符B对应的部分匹配值为2，因此按照上面的公式算出向后移动的位数为：<strong>6 - 2等于4</strong>，所以将搜索词向后移动4位，移动后的匹配关系如下。</p>
+<p><img src="./images/1513661037905.png" alt="Alt text"></p>
+<p>这是已匹配的字符数为2(“AB”)，对应的部分匹配值为0，所以，移动的位数为： 2-0。<br>按照上面规则，逐位比较，知道搜索词的最后一位，发现完全匹配，于是搜索完成。</p>
+<h4 id="三、实现代码"><a href="#三、实现代码" class="headerlink" title="三、实现代码"></a>三、实现代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">def KMP_index(haystack, needle):</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    :type haystack: str</div><div class="line">    :type needle: str</div><div class="line">    :rtype: int</div><div class="line">    &quot;&quot;&quot;</div><div class="line"></div><div class="line">    def get_next(needle):</div><div class="line">        result = []</div><div class="line">        for i in range(len(needle)):</div><div class="line">            s = needle[:i + 1]</div><div class="line">            len_s = len(s)</div><div class="line">            num = 0</div><div class="line">            for j in range(len(s) - 1, 0, -1):</div><div class="line">                if s[:j] == s[len_s - j:]:</div><div class="line">                    num = j</div><div class="line">                    break</div><div class="line">            result.append(num)</div><div class="line">        return result</div><div class="line"></div><div class="line">    m = len(haystack)</div><div class="line">    n = len(needle)</div><div class="line">    cur = 0</div><div class="line">    table = get_next(needle)</div><div class="line">    while cur &lt;= m - n:</div><div class="line">        for i in range(n):</div><div class="line">            if haystack[cur + i] != needle[i]:</div><div class="line">                cur += max(i - table[i-1], 1)</div><div class="line">                break</div><div class="line">        else:</div><div class="line">            return cur</div><div class="line">    return -1</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/12/20/Python属性查找规则/" itemprop="url">
                   Python属性查找规则
                 </a>
@@ -2121,141 +2269,6 @@ Consumer（消耗方）：任何从Kafka读取话题的组件可叫做消耗方�
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/11/05/hexo-常用命令/" itemprop="url">
-                  hexo 常用命令
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-11-05T10:26:43+08:00" content="2017-11-05">
-              2017-11-05
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/使用教程/" itemprop="url" rel="index">
-                    <span itemprop="name">使用教程</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-<!-- 自定义，用于添加摘要图片，文章中不显示 -->
-        
-<!-- 自定义结束 -->
-        
-          
-            <h3 id="新写博客并发布"><a href="#新写博客并发布" class="headerlink" title="新写博客并发布"></a>新写博客并发布</h3><blockquote>
-<ol>
-<li>hexo n “my blog” (or hexo new “my blog”) #新建文章</li>
-<li>hexo p           (or hexo publish) # 发布</li>
-<li>hexo g           (or hexo generate) #生成静态网页</li>
-<li>hexo s           (or hexo server) #启动本地预览调试服务器</li>
-<li>hexo d           (or hexo deploy) #部署到github</li>
-</ol>
-</blockquote>
-<h3 id="清除缓存文件"><a href="#清除缓存文件" class="headerlink" title="清除缓存文件"></a>清除缓存文件</h3><blockquote>
-<ol>
-<li>hexo clean #用于清楚缓存文件db.json和已经生成的静态文件public。</li>
-</ol>
-</blockquote>
-<h3 id="监视文件变动"><a href="#监视文件变动" class="headerlink" title="监视文件变动"></a>监视文件变动</h3><blockquote>
-<ol>
-<li>hexo generate #使用 Hexo 生成静态文件快速而且简单</li>
-<li>hexo generate –watch #监视文件变动</li>
-</ol>
-</blockquote>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2300,7 +2313,7 @@ Consumer（消耗方）：任何从Kafka读取话题的组件可叫做消耗方�
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
