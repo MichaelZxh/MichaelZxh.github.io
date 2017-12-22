@@ -86,21 +86,24 @@
 
 
 
-<meta name="description" content="KMP算法 参考链接：http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html  引言假设我们面临一个这样的问题：一个文本串S，一个字符模式串P，现在要查找P在S中的位置，怎么查找？第一种就是暴力求解法，逐个字符串进行匹配。第二种就是KMP算法。 KMP定义 Knuth-Morr">
+<meta name="description" content="Manacher’s Algorithm（马拉车算法） 参考链接：  http://www.cnblogs.com/grandyang/p/4475985.html https://segmentfault.com/a/1190000003914228   算法说明该算法是用来查找一个字符串的最长回文子串的线性方法，由一个叫Manacher的人在1975年发明的，这个方法最大的贡献在于将时间复杂度">
 <meta name="keywords" content="算法,Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="KMP算法介绍及Python实现">
-<meta property="og:url" content="https://michaelzxh.github.io/2017/12/21/KMP算法介绍及Python实现/index.html">
+<meta property="og:title" content="Manacher&#39;s Algorithm介绍及Python实现">
+<meta property="og:url" content="https://michaelzxh.github.io/2017/12/22/Manacher-s-Algorithm介绍及Python实现/index.html">
 <meta property="og:site_name" content="Zhangxinhe&#39;s Blog">
-<meta property="og:description" content="KMP算法 参考链接：http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html  引言假设我们面临一个这样的问题：一个文本串S，一个字符模式串P，现在要查找P在S中的位置，怎么查找？第一种就是暴力求解法，逐个字符串进行匹配。第二种就是KMP算法。 KMP定义 Knuth-Morr">
+<meta property="og:description" content="Manacher’s Algorithm（马拉车算法） 参考链接：  http://www.cnblogs.com/grandyang/p/4475985.html https://segmentfault.com/a/1190000003914228   算法说明该算法是用来查找一个字符串的最长回文子串的线性方法，由一个叫Manacher的人在1975年发明的，这个方法最大的贡献在于将时间复杂度">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://michaelzxh.github.io/2017/12/21/KMP算法介绍及Python实现/images/1513660904062.png">
-<meta property="og:image" content="https://michaelzxh.github.io/2017/12/21/KMP算法介绍及Python实现/images/1513661037905.png">
-<meta property="og:updated_time" content="2017-12-21T06:56:05.134Z">
+<meta property="og:image" content="https://michaelzxh.github.io/2017/12/22/Manacher-s-Algorithm介绍及Python实现/images/1513847334099.png">
+<meta property="og:image" content="https://michaelzxh.github.io/2017/12/22/Manacher-s-Algorithm介绍及Python实现/images/1513847522237.png">
+<meta property="og:image" content="https://michaelzxh.github.io/2017/12/22/Manacher-s-Algorithm介绍及Python实现/images/1513847671686.png">
+<meta property="og:image" content="https://michaelzxh.github.io/2017/12/22/Manacher-s-Algorithm介绍及Python实现/images/1513847847129.png">
+<meta property="og:image" content="https://michaelzxh.github.io/2017/12/22/Manacher-s-Algorithm介绍及Python实现/images/1513848193227.png">
+<meta property="og:updated_time" content="2017-12-22T02:01:27.411Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="KMP算法介绍及Python实现">
-<meta name="twitter:description" content="KMP算法 参考链接：http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html  引言假设我们面临一个这样的问题：一个文本串S，一个字符模式串P，现在要查找P在S中的位置，怎么查找？第一种就是暴力求解法，逐个字符串进行匹配。第二种就是KMP算法。 KMP定义 Knuth-Morr">
-<meta name="twitter:image" content="https://michaelzxh.github.io/2017/12/21/KMP算法介绍及Python实现/images/1513660904062.png">
+<meta name="twitter:title" content="Manacher&#39;s Algorithm介绍及Python实现">
+<meta name="twitter:description" content="Manacher’s Algorithm（马拉车算法） 参考链接：  http://www.cnblogs.com/grandyang/p/4475985.html https://segmentfault.com/a/1190000003914228   算法说明该算法是用来查找一个字符串的最长回文子串的线性方法，由一个叫Manacher的人在1975年发明的，这个方法最大的贡献在于将时间复杂度">
+<meta name="twitter:image" content="https://michaelzxh.github.io/2017/12/22/Manacher-s-Algorithm介绍及Python实现/images/1513847334099.png">
 
 
 
@@ -121,12 +124,12 @@
 
 
 
-  <link rel="canonical" href="https://michaelzxh.github.io/2017/12/21/KMP算法介绍及Python实现/"/>
+  <link rel="canonical" href="https://michaelzxh.github.io/2017/12/22/Manacher-s-Algorithm介绍及Python实现/"/>
 
 
 <!-- 网页加载条 -->
 <script src="/js/src/pace.min.js"></script>
-  <title> KMP算法介绍及Python实现 | Zhangxinhe's Blog </title>
+  <title> Manacher's Algorithm介绍及Python实现 | Zhangxinhe's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -481,7 +484,7 @@
             
             
               
-                KMP算法介绍及Python实现
+                Manacher's Algorithm介绍及Python实现
               
             
           </h1>
@@ -493,8 +496,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-12-21T14:50:44+08:00" content="2017-12-21">
-              2017-12-21
+            <time itemprop="dateCreated" datetime="2017-12-22T09:59:53+08:00" content="2017-12-22">
+              2017-12-22
             </time>
           </span>
 
@@ -545,40 +548,51 @@
       
 
       
-        <h3 id="KMP算法"><a href="#KMP算法" class="headerlink" title="KMP算法"></a>KMP算法</h3><blockquote>
-<p>参考链接：<a href="http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html</a></p>
-</blockquote>
-<h4 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h4><p>假设我们面临一个这样的问题：一个文本串S，一个字符模式串P，现在要查找P在S中的位置，怎么查找？<br>第一种就是暴力求解法，逐个字符串进行匹配。<br>第二种就是KMP算法。</p>
-<h4 id="KMP定义"><a href="#KMP定义" class="headerlink" title="KMP定义"></a>KMP定义</h4><blockquote>
-<p>Knuth-Morris-Pratt 字符串查找算法，简称为 “KMP算法”，常用于在一个文本串S内查找一个模式串P 的出现位置，这个算法由Donald Knuth、Vaughan Pratt、James H. Morris三人于1977年联合发表，故取这3人的姓氏命名此算法。</p>
-<p>依次对字符串进行移位比较的过程中，设法利用已经知道的配对成功的信息，不要把搜索位置移回到已经比较过的位置，继续把它向后移，这样提高了效率。</p>
-</blockquote>
-<h4 id="算法过程"><a href="#算法过程" class="headerlink" title="算法过程"></a>算法过程</h4><h5 id="一、计算部分匹配表"><a href="#一、计算部分匹配表" class="headerlink" title="一、计算部分匹配表"></a>一、计算部分匹配表</h5><p>这里需要先理解两个概念：前缀和后缀。</p>
+        <h3 id="Manacher’s-Algorithm（马拉车算法）"><a href="#Manacher’s-Algorithm（马拉车算法）" class="headerlink" title="Manacher’s Algorithm（马拉车算法）"></a>Manacher’s Algorithm（马拉车算法）</h3><blockquote>
+<p>参考链接：</p>
 <ul>
-<li>前缀：除了最后一个字符以外，一个字符串的全部头部组合。</li>
-<li>后缀：除了第一个字符以外，一个字符串的全部尾部组合。</li>
-</ul>
-<p>部分匹配值就是前缀和后缀的最长的共有元素的长度。以”ABCDABD”为例说明：</p>
-<blockquote>
-<ul>
-<li>“A”的前缀和后缀都是空集，共有元素的长度为0；</li>
-<li>“AB”的前缀为[A]，后缀为[B]，共有元素的长度为0；</li>
-<li>“ABC”的前缀为[A,AB]，后缀为[C,BC]，共有元素长度为0；</li>
-<li>“ABCD”的前缀为[A,AB,ABC]，后缀为[D,CD,BCD]，共有元素长度为0；</li>
-<li>“ABCDA”的前缀为[A,AB,ABC,ABCD]，后缀为[A,DA,CDA,BCDA]，共有元素为”A”，长度为1；</li>
-<li>“ABCDAB”的前缀为[A,AB,ABC,ABCD,ABCDA]，后缀为[BCDAB,CDAB,DAB,AB,B]，共有元素为”AB”，长度为2；</li>
-<li>“ABCDABD”的前缀为[A,AB,ABC,ABCD,ABCDA,ABCDAB]，后缀为[BCDABD,CDABD,DABD,ABD,BD,D]，共有元素的长度为0.</li>
+<li><a href="http://www.cnblogs.com/grandyang/p/4475985.html" target="_blank" rel="external">http://www.cnblogs.com/grandyang/p/4475985.html</a></li>
+<li><a href="https://segmentfault.com/a/1190000003914228" target="_blank" rel="external">https://segmentfault.com/a/1190000003914228</a></li>
 </ul>
 </blockquote>
-<h5 id="二、计算公式"><a href="#二、计算公式" class="headerlink" title="二、计算公式"></a>二、计算公式</h5><p>已经匹配了部分字符后，往后移动的位数为：</p>
+<h4 id="算法说明"><a href="#算法说明" class="headerlink" title="算法说明"></a>算法说明</h4><p>该算法是用来查找一个字符串的最长回文子串的线性方法，由一个叫Manacher的人在1975年发明的，这个方法最大的贡献在于将时间复杂度提升到了线性。</p>
+<p>如何在字符串中找出最长回文串呢？最容易想到的是：以每一个字符为中心，向两边寻找回文子串，在遍历完整个数组后，就可以找到最长的回文子串。但这个方法的事件复杂度是$O(n^2)$，并不高效。</p>
+<h4 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h4><h5 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h5><p>回文串的长度可以是奇数或者偶数，为了统一处理，算法的第一步是预处理，将字符串的长度统一成奇数，具体做法如下：</p>
 <blockquote>
-<p> <strong>移动位数 = 已匹配的字符数 - 对应的部分匹配值</strong></p>
+<p>在每一个字符的左右都加上一个特殊字符，比如加上’#’，那么加完之后，无论原字符串长度是奇数还是偶数，处理之后都是奇数个。</p>
+<ul>
+<li>bob –&gt; #b#o#b#</li>
+<li>noon –&gt; #n#o#o#n#</li>
+</ul>
+<p>为了进一步减少编码的复杂度，可以在字符串的开始加入另一个特殊字符，这样就不用特殊处理越界问题：</p>
+<ul>
+<li>bob –&gt; $#b#o#b#</li>
+</ul>
 </blockquote>
-<p><img src="./images/1513660904062.png" alt="Alt text"></p>
-<p>上图中前面匹配了6个字符”ABCDAB”是匹配的，查表可知，最后一个匹配字符B对应的部分匹配值为2，因此按照上面的公式算出向后移动的位数为：<strong>6 - 2等于4</strong>，所以将搜索词向后移动4位，移动后的匹配关系如下。</p>
-<p><img src="./images/1513661037905.png" alt="Alt text"></p>
-<p>这是已匹配的字符数为2(“AB”)，对应的部分匹配值为0，所以，移动的位数为： 2-0。<br>按照上面规则，逐位比较，知道搜索词的最后一位，发现完全匹配，于是搜索完成。</p>
-<h4 id="三、实现代码"><a href="#三、实现代码" class="headerlink" title="三、实现代码"></a>三、实现代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">def KMP_index(haystack, needle):</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    :type haystack: str</div><div class="line">    :type needle: str</div><div class="line">    :rtype: int</div><div class="line">    &quot;&quot;&quot;</div><div class="line"></div><div class="line">    def get_next(needle):</div><div class="line">        result = []</div><div class="line">        for i in range(len(needle)):</div><div class="line">            s = needle[:i + 1]</div><div class="line">            len_s = len(s)</div><div class="line">            num = 0</div><div class="line">            for j in range(len(s) - 1, 0, -1):</div><div class="line">                if s[:j] == s[len_s - j:]:</div><div class="line">                    num = j</div><div class="line">                    break</div><div class="line">            result.append(num)</div><div class="line">        return result</div><div class="line"></div><div class="line">    m = len(haystack)</div><div class="line">    n = len(needle)</div><div class="line">    cur = 0</div><div class="line">    table = get_next(needle)</div><div class="line">    while cur &lt;= m - n:</div><div class="line">        for i in range(n):</div><div class="line">            if haystack[cur + i] != needle[i]:</div><div class="line">                cur += max(i - table[i-1], 1)</div><div class="line">                break</div><div class="line">        else:</div><div class="line">            return cur</div><div class="line">    return -1</div></pre></td></tr></table></figure>
+<h5 id="计算最长回文数组"><a href="#计算最长回文数组" class="headerlink" title="计算最长回文数组"></a>计算最长回文数组</h5><p>把一个回文串中最左或最右位置的字符与其对称轴的距离称为回文半径。Manacher定义了一个回文半径数组RL，用RL[i]表示以第i个字符为对称轴的回文串的回文半径。我们一般对字符串从左往右处理，因此这里定义RL[i]为第i个字符为对称轴的回文串的最右一个字符与字符i的距离。对于上面插入分隔符之后的两个串，可以得到RL数组：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">char:    # a # b # a #</div><div class="line"> RL :    1 2 1 4 1 2 1</div><div class="line">RL-1:    0 1 0 3 0 1 0</div><div class="line">  i :    0 1 2 3 4 5 6</div><div class="line"></div><div class="line">char:    # a # b # b # a #</div><div class="line"> RL :    1 2 1 2 5 2 1 2 1</div><div class="line">RL-1:    0 1 0 1 4 1 0 1 0</div><div class="line">  i :    0 1 2 3 4 5 6 7 8</div></pre></td></tr></table></figure>
+<p>通过观察发现，只要RL数组中的最大值减1即是最常回文子串的长度，因此，只要求出了RL数组，就能得到最长回文子串的长度。</p>
+<p>于是问题转换成了：<strong>如何高效求解出RL数组</strong>，基本思路是利用回文串的对称性，扩展回文串。<br>我们再引入一个辅助变量MaxRight，表示当前访问到的所有回文子串，所能触及的最右一个字符的位置。另外还要记录下MaxRight对应的回文串的对称轴所在的位置，记为pos，它们的位置关系如下。<br><img src="./images/1513847334099.png" alt="Alt text"></p>
+<p>我们从左往右地访问字符串来求RL，假设当前访问到的位置为i，即要求RL[i]，在对应上图，i必然是在po右边的(obviously)。但我们更关注的是，i是在MaxRight的左边还是右边。我们分情况来讨论。</p>
+<h6 id="1-当i在MaxRight的左边"><a href="#1-当i在MaxRight的左边" class="headerlink" title="1. 当i在MaxRight的左边"></a>1. 当i在MaxRight的左边</h6><p>如下图所示：<br><img src="./images/1513847522237.png" alt="Alt text"></p>
+<p>我们知道，图中两个红色块之间（包括红色块）的串是回文的；并且以i为对称轴的回文串，是与红色块间的回文串有所重叠的。我们找到i关于pos的对称位置j，这个j对应的RL[j]我们是已经算过的。根据回文串的对称性，以i为对称轴的回文串和以j为对称轴的回文串，有一部分是相同的。这里又有两种细分的情况。</p>
+<p>(1). 以j为对称轴的回文串比较短，短到像下图这样<br><img src="./images/1513847671686.png" alt="Alt text"></p>
+<p>这时我们知道RL[i]至少不会小于RL[j]，并且已经知道了部分的以i为中心的回文串，于是可以令RL[i]=RL[j]。但是以i为对称轴的回文串可能实际上更长，因此我们试着以i为对称轴，继续往左右两边扩展，直到左右两边字符不同，或者到达边界。</p>
+<p>(2). 以j为对称轴的回文串很长<br><img src="./images/1513847847129.png" alt="Alt text"></p>
+<p>这时，我们只能确定，两条蓝线之间的部分（即不超过MaxRight的部分）是回文的，于是从这个长度开始，尝试以i为中心向左右两边扩展，，直到左右两边字符不同，或者到达边界。</p>
+<p>不论以上哪种情况，之后都要尝试更新MaxRight和pos，因为有可能得到更大的MaxRight。</p>
+<p>具体的操作步骤如下：</p>
+<blockquote>
+<ol>
+<li>令RL[i]=min(RL[2*pos-i], MaxRight-i)</li>
+<li>以i为中心扩展回文串，直到左右两边字符不同，或者到达边界</li>
+<li>更新MaxRight和pos</li>
+</ol>
+</blockquote>
+<h5 id="2-当i在MaxRight的右边"><a href="#2-当i在MaxRight的右边" class="headerlink" title="2.当i在MaxRight的右边"></a>2.当i在MaxRight的右边</h5><p><img src="./images/1513848193227.png" alt="Alt text"></p>
+<p>遇到这种情况，说明以i为对称轴的回文串还没有任何一个部分被访问过，于是只能从i的左右两边开始尝试扩展了，当左右两边字符不同，或者到达字符串边界时停止。然后更新MaxRight和pos。</p>
+<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">def longestPalindrome(s):</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    :type s: str</div><div class="line">    :rtype: str</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    s = &apos;#&apos; + &apos;#&apos;.join(s) + &apos;#&apos;</div><div class="line">    RL = [0]*len(s)</div><div class="line">    MaxRight = 0</div><div class="line">    pos = 0</div><div class="line">    MaxSubStr = &apos;&apos;</div><div class="line">    </div><div class="line">    for i in range(len(s)):</div><div class="line">        if i &lt; MaxRight:</div><div class="line">            RL[i] = min(RL[2*pos -i], MaxRight - i)</div><div class="line">        else:</div><div class="line">            RL[i] = 1</div><div class="line">            </div><div class="line">        while i + RL[i] &lt; len(s) and i - RL[i] &gt;= 0 and s[i-RL[i]] == s[i+RL[i]]:</div><div class="line">            RL[i] += 1</div><div class="line">            </div><div class="line">        if i + RL[i] - 1 &gt;MaxRight:</div><div class="line">            MaxRight = i + RL[i] - 1</div><div class="line">            pos = i</div><div class="line">            </div><div class="line">        if MaxRight - pos &gt; len(MaxSubStr):</div><div class="line">            MaxSubStr = &apos;&apos;.join([i for i in s[2*pos-MaxRight:MaxRight] if i != &apos;#&apos;])</div><div class="line">        </div><div class="line">    return MaxSubStr</div></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -634,17 +648,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/20/Python属性查找规则/" rel="next" title="Python属性查找规则">
-                <i class="fa fa-chevron-left"></i> Python属性查找规则
+              <a href="/2017/12/21/KMP算法介绍及Python实现/" rel="next" title="KMP算法介绍及Python实现">
+                <i class="fa fa-chevron-left"></i> KMP算法介绍及Python实现
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/22/Manacher-s-Algorithm介绍及Python实现/" rel="prev" title="Manacher's Algorithm介绍及Python实现">
-                Manacher's Algorithm介绍及Python实现 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -819,7 +829,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#KMP算法"><span class="nav-number">1.</span> <span class="nav-text">KMP算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#引言"><span class="nav-number">1.1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#KMP定义"><span class="nav-number">1.2.</span> <span class="nav-text">KMP定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法过程"><span class="nav-number">1.3.</span> <span class="nav-text">算法过程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#一、计算部分匹配表"><span class="nav-number">1.3.1.</span> <span class="nav-text">一、计算部分匹配表</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#二、计算公式"><span class="nav-number">1.3.2.</span> <span class="nav-text">二、计算公式</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、实现代码"><span class="nav-number">1.4.</span> <span class="nav-text">三、实现代码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Manacher’s-Algorithm（马拉车算法）"><span class="nav-number">1.</span> <span class="nav-text">Manacher’s Algorithm（马拉车算法）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法说明"><span class="nav-number">1.1.</span> <span class="nav-text">算法说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法步骤"><span class="nav-number">1.2.</span> <span class="nav-text">算法步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#预处理"><span class="nav-number">1.2.1.</span> <span class="nav-text">预处理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#计算最长回文数组"><span class="nav-number">1.2.2.</span> <span class="nav-text">计算最长回文数组</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-当i在MaxRight的左边"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">1. 当i在MaxRight的左边</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-当i在MaxRight的右边"><span class="nav-number">1.2.3.</span> <span class="nav-text">2.当i在MaxRight的右边</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码实现"><span class="nav-number">1.3.</span> <span class="nav-text">代码实现</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
